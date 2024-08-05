@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+
+<!-- Mirrored from tbocwwboard.telangana.gov.in/user by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Apr 2018 06:48:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="MobileOptimized" content="width" />
+<link rel="stylesheet" type="text/css" media="screen, projection, tty, tv" title="Standard" href="sites/all/modules/pagestyle/css/style_standard.css" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="alternate stylesheet" type="text/css" media="screen, projection, tty, tv" title="Black/White" href="sites/all/modules/pagestyle/css/style_black_white.css" />
+<link rel="alternate stylesheet" type="text/css" media="screen, projection, tty, tv" title="White/Black" href="sites/all/modules/pagestyle/css/style_white_black.css" />
+  <title>User account | TELANGANA BUILDING AND OTHER CONSTRUCTION WORKERS WELFARE BOARD</title>  
+  
+  <link rel="stylesheet" type="text/css" href="css/system_base.css?owbnw6"/> 
+<link rel="stylesheet" type="text/css" href="css/system_menus.css?owbnw6"/> 
+<link rel="stylesheet" type="text/css" href="css/system_messages.css?owbnw6"/> 
+<link rel="stylesheet" type="text/css" href="css/system_theme.css?owbnw6"/> 
+
+<link rel="stylesheet" type="text/css" href="css/comment.css?owbnw6"/> 
+<link rel="stylesheet" type="text/css" href="css/field.css?owbnw6"/> 
+<link rel="stylesheet" type="text/css" href="css/node.css?owbnw6"/> 
+<link rel="stylesheet" type="text/css" href="css/search.css?owbnw6"/> 
+<link rel="stylesheet" type="text/css" href="css/user.css?owbnw6"/> 
+
+  <style type="text/css" media="all">
+/*@import url("http://tbocwwboard.telangana.gov.in/modules/system/system.base.css?owbnw6");
+@import url("http://tbocwwboard.telangana.gov.in/modules/system/system.menus.css?owbnw6");
+@import url("http://tbocwwboard.telangana.gov.in/modules/system/system.messages.css?owbnw6");
+@import url("http://tbocwwboard.telangana.gov.in/modules/system/system.theme.css?owbnw6");*/
+</style>
+<style type="text/css" media="screen">
+@import url("sites/all/modules/views_slideshow/views_slideshowe5a8.css?owbnw6");
+</style>
+<style type="text/css" media="all">
+/*@import url("http://tbocwwboard.telangana.gov.in/modules/comment/comment.css?owbnw6");*/
+@import url("sites/all/modules/counter/countere5a8.css?owbnw6");
+/*@import url("http://tbocwwboard.telangana.gov.in/modules/field/theme/field.css?owbnw6");
+@import url("http://tbocwwboard.telangana.gov.in/modules/node/node.css?owbnw6");
+@import url("http://tbocwwboard.telangana.gov.in/modules/search/search.css?owbnw6");
+@import url("http://tbocwwboard.telangana.gov.in/modules/user/user.css?owbnw6");*/
+@import url("sites/all/modules/extlink/extlinke5a8.css?owbnw6");
+@import url("sites/all/modules/views/css/viewse5a8.css?owbnw6");
+</style>
+<style type="text/css" media="all">
+@import url("sites/all/modules/ctools/css/ctoolse5a8.css?owbnw6");
+</style>
+<style type="text/css" media="screen">
+<!--/*--><![CDATA[/*><!--*/
+body.pagestyle_black_white,body.pagestyle_black_white *{font-weight:normal !important;}body.pagestyle_white_black,body.pagestyle_white_black *{font-weight:bold !important;}body.pagestyle_yellow_blue,body.pagestyle_yellow_blue *{font-weight:bold !important;}body.pagestyle_standard,body.pagestyle_standard *{font-weight:normal !important;}
+
+/*]]>*/-->
+</style>
+<style type="text/css" media="all">
+@import url("sites/all/modules/pagestyle/pagestylee5a8.css?owbnw6");
+@import url("sites/all/modules/simple_dialog/css/simple_dialoge5a8.css?owbnw6");
+@import url("sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/views_slideshow_cyclee5a8.css?owbnw6");
+</style>
+<style type="text/css" media="all and (min-width: 980px)">
+@import url("sites/all/themes/corporateclean/css/960e5a8.css?owbnw6");
+</style>
+<style type="text/css" media="all and (min-width: 760px) and (max-width: 980px)">
+@import url("sites/all/themes/corporateclean/css/720e5a8.css?owbnw6");
+</style>
+<style type="text/css" media="all and (max-width: 760px)">
+@import url("sites/all/themes/corporateclean/css/mobilee5a8.css?owbnw6");
+</style>
+<style type="text/css" media="all">
+@import url("sites/all/themes/corporateclean/stylee5a8.css?owbnw6");
+@import url("sites/all/themes/corporateclean/color/colorse5a8.css?owbnw6");
+</style>
+
+<!--[if (lte IE 8)&(!IEMobile)]>
+<link type="text/css" rel="stylesheet" href="http://tbocwwboard.telangana.gov.in/sites/all/themes/corporateclean/css/basic-layout.css?owbnw6" media="all" />
+<![endif]-->
+
+<!--[if (lte IE 8)&(!IEMobile)]>
+<link type="text/css" rel="stylesheet" href="http://tbocwwboard.telangana.gov.in/sites/all/themes/corporateclean/css/ie.css?owbnw6" media="all" />
+<![endif]-->
+ <script type="text/javascript" src="js/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="js/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="js/drupal.js?owbnw6"></script>
+<script type="text/javascript" src="js/jquery_cookie.js?owbnw6"></script> 
+    
+<!--  <script type="text/javascript" src="http://tbocwwboard.telangana.gov.in/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="http://tbocwwboard.telangana.gov.in/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="http://tbocwwboard.telangana.gov.in/misc/drupal.js?owbnw6"></script>-->
+<script type="text/javascript" src="sites/all/modules/views_slideshow/js/views_slideshowc619.js?v=1.0"></script>
+<script type="text/javascript" src="sites/all/modules/extlink/extlinke5a8.js?owbnw6"></script>
+<script type="text/javascript" src="sites/all/themes/corporateclean/js/jquery.cycle.alle5a8.js?owbnw6"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+  var pagestyleCookieExpires = 365;
+  var pagestyleCookieDomain = "kb/index.html";
+  var pagestylePath = "sites/all/modules/pagestyle";
+  var pagestyleCurrent = "standard";
+//--><!]]>
+</script>
+<script type="text/javascript" src="sites/all/modules/pagestyle/jquery.pagestylee5a8.js?owbnw6"></script>
+<!--<script type="text/javascript" src="http://tbocwwboard.telangana.gov.in/misc/jquery.cookie.js?owbnw6"></script>-->
+<script type="text/javascript" src="sites/all/libraries/jquery.cycle/jquery.cycle.all.mine5a8.js?owbnw6"></script>
+<script type="text/javascript" src="sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/js/views_slideshow_cyclee5a8.js?owbnw6"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"corporateclean","theme_token":"wa1whoxjZehZrm191is15Jm52XdprX0NwgXsTHO1nbw","js":{"0":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/extlink\/extlink.js":1,"sites\/all\/themes\/corporateclean\/js\/jquery.cycle.all.js":1,"1":1,"sites\/all\/modules\/pagestyle\/jquery.pagestyle.js":1,"misc\/jquery.cookie.js":1,"sites\/all\/libraries\/jquery.cycle\/jquery.cycle.all.min.js":1,"sites\/all\/modules\/views_slideshow\/contrib\/views_slideshow_cycle\/js\/views_slideshow_cycle.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/views_slideshow\/views_slideshow.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/counter\/counter.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/extlink\/extlink.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"0":1,"sites\/all\/modules\/pagestyle\/pagestyle.css":1,"sites\/all\/modules\/simple_dialog\/css\/simple_dialog.css":1,"sites\/all\/modules\/views_slideshow\/contrib\/views_slideshow_cycle\/views_slideshow_cycle.css":1,"sites\/all\/themes\/corporateclean\/css\/960.css":1,"sites\/all\/themes\/corporateclean\/css\/720.css":1,"sites\/all\/themes\/corporateclean\/css\/mobile.css":1,"sites\/all\/themes\/corporateclean\/style.css":1,"sites\/all\/themes\/corporateclean\/color\/colors.css":1,"sites\/all\/themes\/corporateclean\/css\/basic-layout.css":1,"sites\/all\/themes\/corporateclean\/css\/ie.css":1}},"viewsSlideshow":{"featured_slider-block":{"methods":{"goToSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"nextSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"pause":["viewsSlideshowControls","viewsSlideshowCycle"],"play":["viewsSlideshowControls","viewsSlideshowCycle"],"previousSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"transitionBegin":["viewsSlideshowPager","viewsSlideshowSlideCounter"],"transitionEnd":[]},"paused":0}},"viewsSlideshowCycle":{"#views_slideshow_cycle_main_featured_slider-block":{"num_divs":5,"id_prefix":"#views_slideshow_cycle_main_","div_prefix":"#views_slideshow_cycle_div_","vss_id":"featured_slider-block","effect":"fade","transition_advanced":0,"timeout":5000,"speed":700,"delay":0,"sync":1,"random":0,"pause":1,"pause_on_click":0,"action_advanced":0,"start_paused":0,"remember_slide":0,"remember_slide_days":1,"pause_in_middle":0,"pause_when_hidden":0,"pause_when_hidden_type":"full","amount_allowed_visible":"","nowrap":0,"fixed_height":1,"items_per_slide":1,"wait_for_image_load":1,"wait_for_image_load_timeout":3000,"cleartype":0,"cleartypenobg":0,"advanced_options":"{}"}},"extlink":{"extTarget":"_blank","extClass":0,"extSubdomains":1,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":"mailto"},"urlIsAjaxTrusted":{"\/user":true}});
+//--><!]]>
+</script>
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-user" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <!-- #header -->
+<div id="header">
+	<!-- #header-inside -->
+	<div id="header-inside-right" class="grid_4">
+<meta name="google-site-verification" content="7Dz7JpMg-z1sjoAlUdMmy5yePh3ScwQR2eEiPzDfnBg" />
+			
+        </div>
+
+    <div id="header-inside" class="container_12 clearfix">
+	
+			<a class="grid_2" href="index.html" title="Home"><img class="imagess" src="sites/default/files/logo2_0.png" alt="Home" /></a>
+
+    	<!-- #header-inside-left -->
+        <div id="header-inside-left"  class="grid_10">
+            
+           <!--   -->
+            
+            <!--  -->
+     
+                        <div class="clearfix">
+                        <span id="site-name" class="site-name1">
+			<a href="index.html" title="Home">TELANGANA BUILDING AND OTHER CONSTRUCTION WORKERS WELFARE BOARD</a></span>
+                                    </div>
+             
+            
+        </div><!-- EOF: #header-inside-left -->
+        
+        <!-- #header-inside-right -->    
+        <!-- EOF: #header-inside-right -->
+    
+    </div><!-- EOF: #header-inside -->
+
+</div><!-- EOF: #header -->
+
+<!-- #header-menu -->
+<div id="header-menu">
+	<!-- #header-menu-inside -->
+    <div id="header-menu-inside" class="container_12 clearfix">
+    
+    	<div class="grid_13">
+            <div id="navigation" class="clearfix">
+            <ul class="menu"><li class="first leaf"><a href="index.html" id="home">HOME</a></li>
+<li class="expanded"><a href="constitution-state-welfare-board.html">ABOUT THE BOARD</a><ul class="menu"><li class="first leaf"><a href="constitution-state-welfare-board.html">CONSTITUTION OF STATE WELFARE BOARD</a></li>
+<li class="leaf"><a href="chairman-and-members-board.html">CHAIRMAN AND MEMBERS OF THE BOARD</a></li>
+<li class="leaf"><a href="secretary-and-ceo-board.html">SECRETARY AND CEO OF THE BOARD</a></li>
+<li class="leaf"><a href="important-board-resolutions.html">IMPORTANT BOARD RESOLUTIONS</a></li>
+<li class="leaf"><a href="constitution-state-advisory-committee.html">CONSTITUTION OF STATE ADVISORY COMMITTEE</a></li>
+<li class="last leaf"><a href="chairpersons-and-members-advisory-committee.html">CHAIRPERSONS AND MEMBERS OF ADVISORY COMMITTEE</a></li>
+</ul></li>
+<li class="expanded"><a href="registration.html">INFORMATION FOR WORKERS</a><ul class="menu"><li class="first leaf"><a href="who-construction-worker-0.html">WHO  IS CONSTRUCTION WORKER</a></li>
+<li class="leaf"><a href="benefits-worker.html">BENEFITS TO THE WORKER</a></li>
+<li class="leaf"><a href="how-get-registered-beneficiary.html">HOW TO GET REGISTERED AS BENEFICIARY</a></li>
+<li class="leaf"><a href="renewal-process.html">HOW TO GET RENEWAL</a></li>
+<li class="leaf"><a href="how-apply-benefits-and-schemes.html">HOW TO APPLY FOR BENEFITS AND SCHEMES</a></li>
+<li class="last leaf"><a href="procedures-sanction-benefits.html">PROCEDURES FOR SANCTION OF BENEFITS</a></li>
+</ul></li>
+<li class="leaf"><a href="welfare-schemes.html">WELFARE SCHEMES</a></li>
+<li class="expanded"><a href="statutory-responsibility-employers.html">INFORMATION FOR EMPLOYERS</a><ul class="menu"><li class="first leaf"><a href="statutory-responsibility-employers.html">STATUTORY RESPONSIBILITY OF EMPLOYERS</a></li>
+<li class="leaf"><a href="how-get-establishment-registred.html">HOW TO GET ESTABLISHMENT REGISTRED</a></li>
+<li class="leaf"><a href="safety-measures-work-site.html">SAFETY MEASURES AT WORK SITE</a></li>
+<li class="last leaf"><a href="payable-cess-construction-works.html">PAYABLE CESS ON THE CONSTRUCTION WORKS</a></li>
+</ul></li>
+<li class="leaf"><a href="cess-challan.html">CESS</a></li>
+<li class="leaf"><a href="photo-gallary.html">PHOTO GALLARY</a></li>
+<li class="expanded"><a href="contact-us.html">CONTACT US</a><ul class="menu"><li class="first leaf"><a href="contact-us.html">CONTACT DETAILS</a></li>
+<li class="leaf"><a href="">SITE MAP</a></li>
+<li class="last leaf"><a href="feedback-form.html">FEEDBACK FORM</a></li>
+</ul></li>
+</ul>            </div>
+        </div>
+        
+    </div><!-- EOF: #header-menu-inside -->
+
+</div><!-- EOF: #header-menu -->
+<div id="content">
+<!-- #banner -->
+<div id="banner">
+   
+
+		
+        
+      
+        <!--EOF:slider-item-->
+ </div>       
+
+<!-- EOF: #banner -->
+<!-- #content -->
+
+	
+	<!-- #content-inside -->
+    <div id="content-inside" class="container_12 clearfix">
+	
+	               
+	  
+
+        <div id="main" class="grid_12">
+         
+            
+            <div class="breadcrumb"><a href="index.html">Home</a> <span class="breadcrumb-separator">>></span>User account</div>                   
+                 
+                        
+                        
+			                    
+                                    
+            <h2 class="element-invisible">Primary tabs</h2><ul class="tabs primary"><li class="active"><a href="user.html" class="active">Log in<span class="element-invisible">(active tab)</span></a></li>
+<li><a href="user/password.html">Request new password</a></li>
+</ul>
+            <form action="/user" method="post" id="user-login" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" id="edit-name" name="name" value="" size="60" maxlength="60" class="form-text required" />
+<div class="description">Enter your TELANGANA BUILDING AND OTHER CONSTRUCTION WORKERS WELFARE BOARD username.</div>
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
+ <input type="password" id="edit-pass" name="pass" size="60" maxlength="128" class="form-text required" />
+<div class="description">Enter the password that accompanies your username.</div>
+</div>
+<input type="hidden" name="form_build_id" value="form-DL4Vi7qqbWitPL4-2VmEh3PUzZvu8zR880_QUyv-l5Q" />
+<input type="hidden" name="form_id" value="user_login" />
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Log in" class="form-submit" /></div></div></form>
+            	            
+        </div>
+
+          
+		
+<!-- EOF: #main -->		
+		 	        
+  
+      
+   
+    </div>
+	
+<!-- EOF: #content-inside -->
+
+</div><!-- EOF: #content -->
+
+<!-- #footer -->    
+
+
+<!-- #footer-bottom -->    
+<div id="footer-bottom">
+
+	<!-- #footer-bottom-inside --> 
+    <div id="footer-bottom-inside" class="container_12 clearfix">
+    	<!-- #footer-bottom-left --> 
+    	<div id="footer-bottom-left" class="grid_6">
+        
+                        
+              <div class="region region-footer">
+    <div id="block-counter-counter" class="block block-counter">
+
+
+
+</div><div id="block-block-14" class="block block-block">
+
+
+<div class="content">
+<table><tr><td></td>
+</tr><tr><td></td>
+</tr><tr><td colspan="2" align="center"><br />Content on this website is published and managed by Telangana Building &amp; other Construction Workers Board. Department is responsible for data and content of the website. <a style="color:orange;" href="http://www.ts.nic.in/">NIC</a> provides only Technical Support <a style="color:orange;" href="disclaimer-nic.html">DISCLAIMER</a></td>
+</tr><tr><td></td>
+</tr></table></div>
+</div>  </div>
+            
+        </div>
+    	<!-- #footer-bottom-right --> 
+        <div id="footer-bottom-right" class="grid_4">
+        
+        	  <div class="region region-footer-bottom-right">
+    <div id="block-views-last-updated-date-block" class="block block-views">
+
+
+<div class="content">
+<div class="view view-last-updated-date view-id-last_updated_date view-display-id-block view-dom-id-89a8f7c6a8f7ff89b0e7f6c660f46e87">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Last Updated On :</span>    <span class="field-content">16th November 2017</span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div>
+</div>  </div>
+        
+        </div><!-- EOF: #footer-bottom-right -->
+       
+    </div><!-- EOF: #footer-bottom-inside -->
+    
+    <!-- #credits -->   
+    <div id="credits" class="container_12 clearfix">
+        <div class="grid_12">
+      
+
+        </div>
+    </div>
+    <!-- EOF: #credits -->
+
+</div><!-- EOF: #footer -->
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery(document).ready(function($) {
+	
+	$(window).load(function() {
+	
+		$("#slideshow img").show();
+		$("#slideshow").fadeIn("slow");
+		$("#slider-controls-wrapper").fadeIn("slow");
+	
+		$("#slideshow").cycle({
+			fx:    "scrollHorz",
+			speed:  "slow",
+			timeout: "10000",
+			random: 0,
+			nowrap: 0,
+			pause: 0,
+			pager:  "#slider-navigation",
+			pagerAnchorBuilder: function(idx, slide) {
+				return "#slider-navigation li:eq(" + (idx) + ") a";
+			},
+			slideResize: true,
+			containerResize: false,
+			height: "auto",
+			fit: 1,
+			before: function(){
+				$(this).parent().find(".slider-item.current").removeClass("current");
+			},
+			after: onAfter
+		});
+	});
+	
+	function onAfter(curr, next, opts, fwd) {
+		var $ht = $(this).height();
+		$(this).parent().height($ht);
+		$(this).addClass("current");
+	}
+	
+	$(window).load(function() {
+		var $ht = $(".slider-item.current").height();
+		$("#slideshow").height($ht);
+	});
+	
+	$(window).resize(function() {
+		var $ht = $(".slider-item.current").height();
+		$("#slideshow").height($ht);
+	});
+	
+	});
+//--><!]]>
+</script>
+</body>
+
+<!-- Mirrored from tbocwwboard.telangana.gov.in/user by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Apr 2018 06:48:08 GMT -->
+</html>

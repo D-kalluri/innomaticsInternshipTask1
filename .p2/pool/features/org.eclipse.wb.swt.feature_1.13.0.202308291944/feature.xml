@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.wb.swt.feature"
+      label="%featureName"
+      version="1.13.0.202308291944"
+      provider-name="%providerName"
+      plugin="org.eclipse.wb.swt">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.wb.core.feature" version="1.9.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.pde" version="3.2.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.wb.swt"
+         download-size="933"
+         install-size="1925"
+         version="1.9.3.202308291944"
+         unpack="false"/>
+
+</feature>

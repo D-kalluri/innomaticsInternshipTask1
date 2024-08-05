@@ -1,0 +1,351 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Telangana Building and Other Constructions Workers Welfare Board</title>
+        <!--css-->
+        <link href="newsite/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+        <link href="newsite/css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <link rel="stylesheet" href="newsite/css/flexslider.css" type="text/css" media="screen" />
+        <link href="newsite/css/font-awesome.css" rel="stylesheet"> 
+        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js"></script>
+        <script src="newsite/charts/Chart.min.js"></script> </body>
+
+    <!--css-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content=" Pulsion Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+          Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--js-->
+    <script src="newsite/js/bootstrap.min.js"></script>
+    <!--js-->
+    <link href="newsite/css/owl.carousel.css" rel="stylesheet">
+    <script src="newsite/js/owl.carousel.js"></script>
+    <script src="newsite/js/font_inc_dec.js"></script>
+    <style>
+        body.contrast
+        { background-color:#000 !important;}
+        .contrast a, .contrast .socialIcons.select-lang a{ color:#ffff00 !important;}
+        body.contrast, .contrast p, .contrast div, .contrast table{ color: #fff !important}
+
+        .ridge {
+            border-style: ridge;
+            border-radius: 5px;
+            padding: 3px;
+            margin: 9px;
+            background-color: #d5f2f7;
+            border: 2px solid #bff9a1;
+        }
+        .zoom {
+
+            transition: transform .2s;
+            width: 150px;
+            height: 125px;
+            margin: 0 auto;
+        }
+
+        .zoom:hover {
+            -ms-transform: scale(1.5); /* IE 9 */
+            -webkit-transform: scale(1.5); /* Safari 3-8 */
+            transform: scale(1.5); 
+        }
+    </style>
+        <script>
+        function visCounters() {
+            $.ajax({
+                type: "post",
+                url: "visitorCounts",
+                cache: false,
+                async: false,
+                success: function (result)
+                {
+                    var val = JSON.parse(result);
+                    //alert(val[0].visitors);
+                    document.getElementById("scount").innerHTML = "<h4><span style='color:#615a5a;font-weight:900;font-family: 'Montserrat', sans-serif;text-shadow: -9px 2px 13px #fefffe;'>&nbsp;&nbsp;Site Visited &nbsp;&nbsp;</span><span style='color:#841111;text-shadow: -9px 2px 13px #fefffe;font-weight:900;font-family: 'Montserrat', sans-serif;'>"+val[0].visitors+"</span> <span style='color:#615a5a;text-shadow: -9px 2px 13px #fefffe;font-weight:900;font-family: 'Montserrat', sans-serif'>&nbsp;times,&nbsp;&nbsp;Logged Users: &nbsp;&nbsp;</span><span style='color:#841111;font-weight:900;font-family: 'Montserrat', sans-serif;text-shadow: -9px 2px 13px #fefffe;'>"+val[0].login_count+"</span> <span style='color:#615a5a;text-shadow: -9px 2px 13px #fefffe;font-weight:900;font-family: 'Montserrat', sans-serif'>&nbsp; till date&nbsp; and Active Users: <font color='green' size='4'>"+val[0].active_users+"</font></span> </h4>";
+                    $("#scounter").show();
+                },
+                error: function (error) {   alert("error" + error);     }
+            });
+            return false;
+        }
+    </script>
+    <script>
+        $(function () {
+            $("#includedFooter").load("new_footer.html");
+            //$("#includedBarCharts").load("barcharts.html");
+        });
+    </script> 
+    <style>
+        .stroke {
+            -webkit-text-stroke: 1px #ecefe5;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                items: 1,
+                lazyLoad: true,
+                autoPlay: true,
+                navigation: false,
+                navigationText: false,
+                pagination: true,
+            });
+        });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,te', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <!--web-font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+
+    <!--web-font--><style>.fixheader {
+
+            position: fixed;
+            top: 0;
+            padding: 0px;
+
+        }
+    </style>
+</head>
+
+<body onLoad="visCounters();">
+    <div class="header"  >
+        <div class="header-top " id="headert" >
+            <table align="right" id="tt" style="margin-top:10px">
+                <tr id="tr1">
+                    <td >    
+                        <a href="#content"  > <b><u>Skip to Main Content</u></b> </a>&nbsp;
+                        <a  href="javascript:increaseFontSize();"  > <b> A+ </b> </a>&nbsp; <b> <a  href="javascript:decreaseFontSize();" > A- </a></b>&nbsp;
+                        <b> <a  href="javascript:resetFont();" >  A </a></b>&nbsp;
+                        <a href="javascript:changeBackground(false);" ><img src="newsite/images/icon_m.png" alt="A"  /></a>
+                        <!-- <td style="padding-left:10px"  >  <a href="javascript:void(0);" title="Change Contrast" ><span aria-hidden="true" >A</span></td> -->
+                        <a  href="new_telugu_site1.html"><b><u>Click here for తెలుగు</u></b></a>
+                    </td>
+                </tr>  
+            </table>
+            <br>
+            <br>
+
+            <div class="col-md-2 header-left"> <!--<img src="images/chandra.png" alt=""/>--> </div>
+
+            <div class="col-md-8 header-middle ">
+                <br><img src="newsite/images/logo2_0.png" alt=""/>
+                <h3 id="h3t" class="stroke" style="text-shadow: -9px 2px 13px #fefffe;color: #9a255b"><b>Telangana Building and Other Construction<br> Workers Welfare Board<b></h3><br>
+                            </div>  
+
+                            <div class="col-md-2 header-left">  </div>
+                            <div class="clearfix">              </div>
+                            </div>
+                            <!-- //header-top -->
+                            <div class="top-nav">
+                                <nav class="navbar navbar-default" id="navt">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> Menu </button>
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+                                        <ul class="nav navbar-nav" id="ult">
+                                            <a href="index.html"  ><img src="newsite/images/new_homem.png" alt="home" style="margin-left:20px;" /></a>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>About The Board</b><span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="hvr-underline-from-center" href="new_constitution_welfare_board.html">Constitution Of State Welfare Board</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="#">Chairman And Members Of The Board</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_secretary_ceo.html">Secretary And CEO Of The Board</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_important_resolutions.html">Important Board Resolutions</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_state_advisory_committee.html">Constitution Of State Adviser Committee</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_chairpersons_members.html">Chairperson And Member Of The Advisor Committee</a></li>
+                                                </ul>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Information For Workers</b><span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="hvr-underline-from-center" href="new_construction_worker.html">Who Is Construction Worker</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_benefits_worker.html">Benefits To The Worker</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_registered_beneficiary.html">How To Get Registered As Beneficiary</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_renewal_process.html">How To Get Renewal</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_benefits_schemes.html">How To Apply For Benefits and Schemes</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_sanction_benefits.html">Procedures For Sanction Of Benefits</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="new_welfare_schemes.html" class="hvr-underline-from-center"><b>Welfare Schemes</b></a></li>
+
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Information For Employers</b><span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="hvr-underline-from-center" href="new_responsibility_employers.html">Statutory Responsibility Of Employers</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_establishment_registered.html">How To Get Establishment Registered</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_safety_measures.html">Safety Measures At Work Site</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_payable_cess.html">Payable Cess On The Construction Works</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="hvr-underline-from-center" href="new_gos.html"><b>GO's</b></a></li>
+                                            <li><a class="hvr-underline-from-center" href="new_RTI_Act.html"><b>RTI Act</b></a></li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>FAQs</b><span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="hvr-underline-from-center" href="new_FAQs.html">Regarding Welfare Schemes</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_registration_cons_est.html">Regarding Registration of <br> Construction Establishments</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Contact Us</b><span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="hvr-underline-from-center" href="new_contact_us.html">Contact Us</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="new_sitemap.html">Site Map</a></li>
+                                                </ul>
+                                            </li>	
+                                            <li><a class="hvr-underline-from-center" href="new_downloads.html"><b>Downloads</b></a></li>
+
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Reports</b><span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a target="_blank" class="hvr-underline-from-center" href="dashBoardPage">Registrations &AMP; Claims DashBoard</a></li>
+                                                    <li><a target="_blank" class="hvr-underline-from-center" href="regWorkD">Registered Workers District and Alo Wise</a></li>
+                                                    <li><a target="_blank" class="hvr-underline-from-center" href="RegWorkTradeP.jsp">Workers Trade Wise</a></li>
+                                                    <li><a class="hvr-underline-from-center" href="CaptchaValidationForOutSide.jsp">Status of Worker Registrations</a></li>
+                                                    <li><a target="_blank"  class="hvr-underline-from-center" href="serviceProvideComplete">Service Provider Wise Reports</a></li>
+								 <li><a target="_blank"  class="hvr-underline-from-center" href="http://tbocwwb.cschealthcare.in/GeneralPages/Home.aspx">Construction Workers Health Screening Dashboard</a></li>
+                                                </ul>
+                                            </li>	
+                                            <li  class="dropdown">
+                                                <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <b>Search</b>
+                                                    <span class="caret"></span> </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a target="_blank"  class="hvr-underline-from-center" href="searchRegisteredOS">Search Registered Workers</a></li>
+                                                    <li><a target="_blank"  class="hvr-underline-from-center" href="checkClaimOS">Check Claim Status</a></li>
+                                                    <li><a target="_blank"  class="hvr-underline-from-center" href="searchOfficerOS">Search Officer</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a class="hvr-underline-from-center" href="tbocwwb.jsp"><b>Login</b></a></li>
+
+                                            <!--    <li class="dropdown">
+                                                    <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Officials Login</b><span class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="hvr-underline-from-center" href="tbocwwb.jsp?ln=1">Officers</a></li>
+                                                        <li><a class="hvr-underline-from-center" href="tbocwwb.jsp?ln=2">Deos</a></li>
+                                                        <li><a class="hvr-underline-from-center" href="tbocwwb.jsp?ln=3">Skill Training Partners</a></li>
+                                                        <li><a class="hvr-underline-from-center" href="tbocwwb.jsp?ln=4">Service Providers</a></li>
+                                                    </ul>
+                                                </li>	-->
+                                        </ul>
+                                        <!--<div class="text-center">
+                                        <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">
+                                            Login Form</a>-->
+                                    </div>
+                                </nav>	
+                            </div>
+                            <!-- //script for smooth drop down-nav -->
+                            <script>
+                                $(document).ready(function () {
+                                    $(".dropdown").hover(
+                                            function () {
+                                                $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                                                $(this).toggleClass('open');
+                                            },
+                                            function () {
+                                                $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                                                $(this).toggleClass('open');
+                                            }
+                                    );
+                                });
+                            </script>
+                            <!-- //script for smooth drop down-nav -->
+                            <!--header-->
+                            <!--banner--> <!--marquee behavior="alternate"> <h2><font color='red'>  TBOCWWB Services will not be available between 28/02/2023 9:00 PM to 01/03/2023 9.00PM due to maintenance</font> </h2> </marquee-->
+                            <div class="banner-section" style="padding-right: 5em;">
+                                <div class="container">
+                                    <div class="col-md-8 ban-grid" style="padding-left: 0em;">
+                                        <div class="slider">
+                                            <ul class="rslides" id="slider">
+                                                <li>
+                                                    <img src="newsite/images/modi.jpg" alt="" style=" width: 90%; height: 400px;"/>
+                                                </li>
+                                                <li>
+                                                    <img src="newsite/images/003_0.jpg" alt="" style=" width: 90%; height: 400px;"/>
+
+                                                </li>
+
+                                                <li>
+                                                    <img src="newsite/images/ra.jpg" alt="" style=" width: 90%; height: 400px;"/>
+
+                                                </li>
+
+                                                <li>
+                                                    <img src="newsite/images/building_1.jpg" alt="" style=" width: 90%; height: 400px;"/>
+                                                </li>
+                                                <li>
+                                                    <img src="newsite/images/Metro.jpg" alt="" style=" width: 90%; height: 400px;"/>
+                                                </li>
+                                                <li>
+                                                    <img src="newsite/images/Untitled-3_0.jpg" alt="" style=" width: 90%; height: 400px;"/>
+                                                </li>
+                                                <li>
+                                                    <img src="newsite/images/Logo-for-publishing.jpg" alt="" style=" width: 90%; height: 400px;"/>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>	
+                                    <div class="col-md-4 about-grids1">
+
+                                        <div id="content">
+                                            <h4 id="h4t" class="heading-small" style="margin: 0em 0 .5em;color:#9a255b"><strong>Welcome to Our Board</strong></h4>
+
+                                            <div >
+                                                <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div id="midt"><p  align="justify" style="margin: -8px -82px;margin-left: 1px;font-size: 14px;padding-left: 7em;padding: 0px 0;">The Telangana Building &amp; Other Construction Workers Welfare Board was established by the Government of Telangana State under Section 18 of Building &amp; Other Construction Workers (RE&amp;CS) Act, 1996 primarily for formulating and implementing the various Welfare schemes for the benefit of the Building &amp; Other Construction Workers in the Telangana State. The Board has come into existence with effect from 17-09-2014.</p>
+                                                            <br> <p  align="justify" style="margin: -8px -82px;border-bottom: 0px;margin-left:1px;font-size: 14px;padding-left: 7em;padding: 0px 0;">The Telangana Building &amp; Other Construction Workers Welfare Board is a tripartite body consisting of worker representatives, employer representatives and Government officials. The Board has carried on extensive drives and registered more than 8.85 lakhs construction workers as beneficiaries and also formulated and have been implementing various schemes such as marriage gift, Maternity Benefit, Fatal Accident Relief, Disability Relief, Natural Death Relief, Hospitalisation relief, Funeral Expenses and Pension Scheme (NPS).</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"> </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <br>
+    <!--div id="includedBarCharts">
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-lg-7" style="margin-top:55px">
+                    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                </div>
+                <div class="col-lg-4">
+                    <canvas id="myPieChart" style="width:35%;max-width:500px"></canvas>
+                    </div>
+                <div class="col-lg-7" style="margin-top:55px">
+                    <canvas id="myCBarChart" style="width:100%;max-width:700px"></canvas>
+                </div>
+                <div class="col-lg-4">
+                    <canvas id="myCPieChart" style="width:35%;max-width:500px"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br-->
+    <div  style="padding: 1em 0;background: #ace0d6;">   <span align="left" style="color: black;font-family: 'Montserrat', sans-serif"><div style="display: none" id="scounter"><span id="scount"></span></div></span></div>
+    <div id="includedFooter"></div>
+        <script src="newsite/js/responsiveslides.min.js"></script>
+            <script>
+                $(function () {
+                    $("#slider").responsiveSlides({
+                        auto: true,
+                        nav: true,
+                        speed: 800,
+                        namespace: "callbacks",
+                        pager: true,
+                    });
+                });
+            </script>
+    </body>
+</html>

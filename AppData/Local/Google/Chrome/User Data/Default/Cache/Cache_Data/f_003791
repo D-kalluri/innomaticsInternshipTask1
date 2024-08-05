@@ -1,0 +1,3866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="robots" content="NONE,NOARCHIVE">
+  <title>OperationalError
+          at /farmerlogincheck/</title>
+  <style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; background-color:#fff; color:#000; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; }
+    h2 { margin-bottom:.8em; }
+    h3 { margin:1em 0 .5em 0; }
+    h4 { margin:0 0 .5em 0; font-weight: normal; }
+    code, pre { font-size: 100%; white-space: pre-wrap; }
+    table { border:1px solid #ccc; border-collapse: collapse; width:100%; background:white; }
+    tbody td, tbody th { vertical-align:top; padding:2px 3px; }
+    thead th {
+      padding:1px 6px 1px 3px; background:#fefefe; text-align:left;
+      font-weight:normal; font-size:11px; border:1px solid #ddd;
+    }
+    tbody th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+    table.vars { margin:5px 0 2px 40px; }
+    table.vars td, table.req td { font-family:monospace; }
+    table td.code { width:100%; }
+    table td.code pre { overflow:hidden; }
+    table.source th { color:#666; }
+    table.source td { font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }
+    ul.traceback { list-style-type:none; color: #222; }
+    ul.traceback li.frame { padding-bottom:1em; color:#4f4f4f; }
+    ul.traceback li.user { background-color:#e0e0e0; color:#000 }
+    div.context { padding:10px 0; overflow:hidden; }
+    div.context ol { padding-left:30px; margin:0 10px; list-style-position: inside; }
+    div.context ol li { font-family:monospace; white-space:pre; color:#777; cursor:pointer; padding-left: 2px; }
+    div.context ol li pre { display:inline; }
+    div.context ol.context-line li { color:#464646; background-color:#dfdfdf; padding: 3px 2px; }
+    div.context ol.context-line li span { position:absolute; right:32px; }
+    .user div.context ol.context-line li { background-color:#bbb; color:#000; }
+    .user div.context ol li { color:#666; }
+    div.commands { margin-left: 40px; }
+    div.commands a { color:#555; text-decoration:none; }
+    .user div.commands a { color: black; }
+    #summary { background: #ffc; }
+    #summary h2 { font-weight: normal; color: #666; }
+    #explanation { background:#eee; }
+    #template, #template-not-exist { background:#f6f6f6; }
+    #template-not-exist ul { margin: 0 0 10px 20px; }
+    #template-not-exist .postmortem-section { margin-bottom: 3px; }
+    #unicode-hint { background:#eee; }
+    #traceback { background:#eee; }
+    #requestinfo { background:#f6f6f6; padding-left:120px; }
+    #summary table { border:none; background:transparent; }
+    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }
+    #requestinfo h3 { margin-bottom:-1em; }
+    .error { background: #ffc; }
+    .specific { color:#cc3300; font-weight:bold; }
+    h2 span.commands { font-size:.7em; font-weight:normal; }
+    span.commands a:link {color:#5E5694;}
+    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }
+    .append-bottom { margin-bottom: 10px; }
+  </style>
+  
+  <script type="text/javascript">
+    function hideAll(elems) {
+      for (var e = 0; e < elems.length; e++) {
+        elems[e].style.display = 'none';
+      }
+    }
+    window.onload = function() {
+      hideAll(document.querySelectorAll('table.vars'));
+      hideAll(document.querySelectorAll('ol.pre-context'));
+      hideAll(document.querySelectorAll('ol.post-context'));
+      hideAll(document.querySelectorAll('div.pastebin'));
+    }
+    function toggle() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        if (e) {
+          e.style.display = e.style.display == 'none' ? 'block': 'none';
+        }
+      }
+      return false;
+    }
+    function varToggle(link, id) {
+      toggle('v' + id);
+      var s = link.getElementsByTagName('span')[0];
+      var uarr = String.fromCharCode(0x25b6);
+      var darr = String.fromCharCode(0x25bc);
+      s.textContent = s.textContent == uarr ? darr : uarr;
+      return false;
+    }
+    function switchPastebinFriendly(link) {
+      s1 = "Switch to copy-and-paste view";
+      s2 = "Switch back to interactive view";
+      link.textContent = link.textContent.trim() == s1 ? s2: s1;
+      toggle('browserTraceback', 'pastebinTraceback');
+      return false;
+    }
+  </script>
+  
+</head>
+<body>
+<div id="summary">
+  <h1>OperationalError
+       at /farmerlogincheck/</h1>
+  <pre class="exception_value">attempt to write a readonly database</pre>
+  <table class="meta">
+
+    <tr>
+      <th>Request Method:</th>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <th>Request URL:</th>
+      <td>http://127.0.0.1:8000/farmerlogincheck/</td>
+    </tr>
+
+    <tr>
+      <th>Django Version:</th>
+      <td>2.2</td>
+    </tr>
+
+    <tr>
+      <th>Exception Type:</th>
+      <td>OperationalError</td>
+    </tr>
+
+
+    <tr>
+      <th>Exception Value:</th>
+      <td><pre>attempt to write a readonly database</pre></td>
+    </tr>
+
+
+    <tr>
+      <th>Exception Location:</th>
+      <td>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\sqlite3\base.py in execute, line 383</td>
+    </tr>
+
+    <tr>
+      <th>Python Executable:</th>
+      <td>C:\Program Files\Python37\python.exe</td>
+    </tr>
+    <tr>
+      <th>Python Version:</th>
+      <td>3.7.0</td>
+    </tr>
+    <tr>
+      <th>Python Path:</th>
+      <td><pre>[&#39;C:\\Desktop\\MINI PRPOJECT WORK\\MINI PROJECT\\code&#39;,
+ &#39;C:\\Program Files\\Python37\\python37.zip&#39;,
+ &#39;C:\\Program Files\\Python37\\DLLs&#39;,
+ &#39;C:\\Program Files\\Python37\\lib&#39;,
+ &#39;C:\\Program Files\\Python37&#39;,
+ &#39;C:\\Users\\Dinesh\\AppData\\Roaming\\Python\\Python37\\site-packages&#39;,
+ &#39;C:\\Program Files\\Python37\\lib\\site-packages&#39;]</pre></td>
+    </tr>
+    <tr>
+      <th>Server time:</th>
+      <td>Wed, 4 Oct 2023 18:05:40 +0000</td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+<div id="traceback">
+  <h2>Traceback <span class="commands"><a href="#" onclick="return switchPastebinFriendly(this);">
+    Switch to copy-and-paste view</a></span>
+  </h2>
+  <div id="browserTraceback">
+    <ul class="traceback">
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py</code> in <code>_execute</code>
+
+          
+            <div class="context" id="c2003950035336">
+              
+                <ol start="77" class="pre-context" id="pre2003950035336">
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>            if params is None:</pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>                return self.cursor.execute(sql)</pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>            else:</pre></li>
+                
+                </ol>
+              
+              <ol start="84" class="context-line">
+                <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>                return self.cursor.execute(sql, params)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='85' class="post-context" id="post2003950035336">
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>    def _executemany(self, sql, param_list, *ignored_wrapper_args):</pre></li>
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003950035336')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003950035336">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>ignored_wrapper_args</td>
+                    <td class="code"><pre>(False,
+ {&#39;connection&#39;: &lt;django.db.backends.sqlite3.base.DatabaseWrapper object at 0x000001D295604438&gt;,
+  &#39;cursor&#39;: &lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;})</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>(&#39;kpqmrnno13q20nx07oqr5q2oywi2upld&#39;,
+ &#39;MmUxNGVhY2Y0ZDViNWFiOTMzZmJlYmYzNWEyMTEwZTc0MDMwNGY0Njp7ImVtYWlsIjoia2FsbHVyaWRpbmVzaDA3QGdtYWlsLmNvbSJ9&#39;,
+ &#39;2023-10-18 18:05:40.021411&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>(&#39;INSERT INTO &quot;django_session&quot; (&quot;session_key&quot;, &quot;session_data&quot;, &quot;expire_date&quot;) &#39;
+ &#39;SELECT %s, %s, %s&#39;)</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\sqlite3\base.py</code> in <code>execute</code>
+
+          
+            <div class="context" id="c2003949457992">
+              
+                <ol start="376" class="pre-context" id="pre2003949457992">
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    This fixes it -- but note that if you want to use a literal &quot;%s&quot; in a query,</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    you&#39;ll need to use &quot;%%s&quot;.</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    def execute(self, query, params=None):</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>        if params is None:</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>            return Database.Cursor.execute(self, query)</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>        query = self.convert_query(query)</pre></li>
+                
+                </ol>
+              
+              <ol start="383" class="context-line">
+                <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>        return Database.Cursor.execute(self, query, params)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='384' class="post-context" id="post2003949457992">
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    def executemany(self, query, param_list):</pre></li>
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>        query = self.convert_query(query)</pre></li>
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>        return Database.Cursor.executemany(self, query, param_list)</pre></li>
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    def convert_query(self, query):</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003949457992')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003949457992">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>(&#39;kpqmrnno13q20nx07oqr5q2oywi2upld&#39;,
+ &#39;MmUxNGVhY2Y0ZDViNWFiOTMzZmJlYmYzNWEyMTEwZTc0MDMwNGY0Njp7ImVtYWlsIjoia2FsbHVyaWRpbmVzaDA3QGdtYWlsLmNvbSJ9&#39;,
+ &#39;2023-10-18 18:05:40.021411&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>query</td>
+                    <td class="code"><pre>(&#39;INSERT INTO &quot;django_session&quot; (&quot;session_key&quot;, &quot;session_data&quot;, &quot;expire_date&quot;) &#39;
+ &#39;SELECT ?, ?, ?&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.sqlite3.base.SQLiteCursorWrapper object at 0x000001D2951BF438&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+          <li><h3>
+          
+            The above exception (attempt to write a readonly database) was the direct cause of the following exception:
+          
+        </h3></li>
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\core\handlers\exception.py</code> in <code>inner</code>
+
+          
+            <div class="context" id="c2003953550792">
+              
+                <ol start="27" class="pre-context" id="pre2003953550792">
+                
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>    This decorator is automatically applied to all middleware to ensure that</pre></li>
+                
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>    no middleware leaks an exception and that the next middleware in the stack</pre></li>
+                
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>    can rely on getting a response instead of an exception.</pre></li>
+                
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>    &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>    @wraps(get_response)</pre></li>
+                
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>    def inner(request):</pre></li>
+                
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>        try:</pre></li>
+                
+                </ol>
+              
+              <ol start="34" class="context-line">
+                <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>            response = get_response(request)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='35' class="post-context" id="post2003953550792">
+                  
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>        except Exception as exc:</pre></li>
+                  
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>            response = response_for_exception(request, exc)</pre></li>
+                  
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>        return response</pre></li>
+                  
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre>    return inner</pre></li>
+                  
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003953550792', 'post2003953550792')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003953550792')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003953550792">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>exc</td>
+                    <td class="code"><pre>OperationalError(&#39;attempt to write a readonly database&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>get_response</td>
+                    <td class="code"><pre>&lt;django.contrib.sessions.middleware.SessionMiddleware object at 0x000001D294C85F60&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest: POST &#39;/farmerlogincheck/&#39;&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\utils\deprecation.py</code> in <code>__call__</code>
+
+          
+            <div class="context" id="c2003953552200">
+              
+                <ol start="89" class="pre-context" id="pre2003953552200">
+                
+                  <li onclick="toggle('pre2003953552200', 'post2003953552200')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003953552200', 'post2003953552200')"><pre>    def __call__(self, request):</pre></li>
+                
+                  <li onclick="toggle('pre2003953552200', 'post2003953552200')"><pre>        response = None</pre></li>
+                
+                  <li onclick="toggle('pre2003953552200', 'post2003953552200')"><pre>        if hasattr(self, &#39;process_request&#39;):</pre></li>
+                
+                  <li onclick="toggle('pre2003953552200', 'post2003953552200')"><pre>            response = self.process_request(request)</pre></li>
+                
+                  <li onclick="toggle('pre2003953552200', 'post2003953552200')"><pre>        response = response or self.get_response(request)</pre></li>
+                
+                  <li onclick="toggle('pre2003953552200', 'post2003953552200')"><pre>        if hasattr(self, &#39;process_response&#39;):</pre></li>
+                
+                </ol>
+              
+              <ol start="96" class="context-line">
+                <li onclick="toggle('pre2003953552200', 'post2003953552200')"><pre>            response = self.process_response(request, response)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='97' class="post-context" id="post2003953552200">
+                  
+                  <li onclick="toggle('pre2003953552200', 'post2003953552200')"><pre>        return response</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003953552200')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003953552200">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest: POST &#39;/farmerlogincheck/&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>response</td>
+                    <td class="code"><pre>&lt;HttpResponse status_code=200, &quot;text/html; charset=utf-8&quot;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.contrib.sessions.middleware.SessionMiddleware object at 0x000001D294C85F60&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\contrib\sessions\middleware.py</code> in <code>process_response</code>
+
+          
+            <div class="context" id="c2003953551880">
+              
+                <ol start="51" class="pre-context" id="pre2003953551880">
+                
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                        max_age = request.session.get_expiry_age()</pre></li>
+                
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                        expires_time = time.time() + max_age</pre></li>
+                
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                        expires = http_date(expires_time)</pre></li>
+                
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                    # Save the session data and refresh the client cookie.</pre></li>
+                
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                    # Skip session save for 500 responses, refs #3881.</pre></li>
+                
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                    if response.status_code != 500:</pre></li>
+                
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                        try:</pre></li>
+                
+                </ol>
+              
+              <ol start="58" class="context-line">
+                <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                            request.session.save()</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='59' class="post-context" id="post2003953551880">
+                  
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                        except UpdateError:</pre></li>
+                  
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                            raise SuspiciousOperation(</pre></li>
+                  
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                                &quot;The request&#39;s session was deleted before the &quot;</pre></li>
+                  
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                                &quot;request completed. The user may have logged &quot;</pre></li>
+                  
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                                &quot;out in a concurrent request, for example.&quot;</pre></li>
+                  
+                  <li onclick="toggle('pre2003953551880', 'post2003953551880')"><pre>                            )</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003953551880')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003953551880">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>accessed</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>empty</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>expires</td>
+                    <td class="code"><pre>&#39;Wed, 18 Oct 2023 18:05:40 GMT&#39;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>expires_time</td>
+                    <td class="code"><pre>1697652340.0190172</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>max_age</td>
+                    <td class="code"><pre>1209600</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>modified</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest: POST &#39;/farmerlogincheck/&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>response</td>
+                    <td class="code"><pre>&lt;HttpResponse status_code=200, &quot;text/html; charset=utf-8&quot;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.contrib.sessions.middleware.SessionMiddleware object at 0x000001D294C85F60&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\contrib\sessions\backends\db.py</code> in <code>save</code>
+
+          
+            <div class="context" id="c2003956024520">
+              
+                <ol start="74" class="pre-context" id="pre2003956024520">
+                
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>    def save(self, must_create=False):</pre></li>
+                
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>        Save the current session data to the database. If &#39;must_create&#39; is</pre></li>
+                
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>        True, raise a database error if the saving operation doesn&#39;t create a</pre></li>
+                
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>        new entry (as opposed to possibly updating an existing entry).</pre></li>
+                
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>        if self.session_key is None:</pre></li>
+                
+                </ol>
+              
+              <ol start="81" class="context-line">
+                <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>            return self.create()</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='82' class="post-context" id="post2003956024520">
+                  
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>        data = self._get_session(no_load=must_create)</pre></li>
+                  
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>        obj = self.create_model_instance(data)</pre></li>
+                  
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>        using = router.db_for_write(self.model, instance=obj)</pre></li>
+                  
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>        try:</pre></li>
+                  
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>            with transaction.atomic(using=using):</pre></li>
+                  
+                  <li onclick="toggle('pre2003956024520', 'post2003956024520')"><pre>                obj.save(force_insert=must_create, force_update=not must_create, using=using)</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003956024520')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003956024520">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>must_create</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.contrib.sessions.backends.db.SessionStore object at 0x000001D295604908&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\contrib\sessions\backends\db.py</code> in <code>create</code>
+
+          
+            <div class="context" id="c2003956027080">
+              
+                <ol start="48" class="pre-context" id="pre2003956027080">
+                
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>    def create(self):</pre></li>
+                
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>        while True:</pre></li>
+                
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>            self._session_key = self._get_new_session_key()</pre></li>
+                
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>            try:</pre></li>
+                
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>                # Save immediately to ensure we have a unique entry in the</pre></li>
+                
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>                # database.</pre></li>
+                
+                </ol>
+              
+              <ol start="55" class="context-line">
+                <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>                self.save(must_create=True)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='56' class="post-context" id="post2003956027080">
+                  
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>            except CreateError:</pre></li>
+                  
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>                # Key wasn&#39;t unique. Try again.</pre></li>
+                  
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>                continue</pre></li>
+                  
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>            self.modified = True</pre></li>
+                  
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre>            return</pre></li>
+                  
+                  <li onclick="toggle('pre2003956027080', 'post2003956027080')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003956027080')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003956027080">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.contrib.sessions.backends.db.SessionStore object at 0x000001D295604908&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\contrib\sessions\backends\db.py</code> in <code>save</code>
+
+          
+            <div class="context" id="c2003953549960">
+              
+                <ol start="80" class="pre-context" id="pre2003953549960">
+                
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>        if self.session_key is None:</pre></li>
+                
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>            return self.create()</pre></li>
+                
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>        data = self._get_session(no_load=must_create)</pre></li>
+                
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>        obj = self.create_model_instance(data)</pre></li>
+                
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>        using = router.db_for_write(self.model, instance=obj)</pre></li>
+                
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>        try:</pre></li>
+                
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>            with transaction.atomic(using=using):</pre></li>
+                
+                </ol>
+              
+              <ol start="87" class="context-line">
+                <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>                obj.save(force_insert=must_create, force_update=not must_create, using=using)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='88' class="post-context" id="post2003953549960">
+                  
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>        except IntegrityError:</pre></li>
+                  
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>            if must_create:</pre></li>
+                  
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>                raise CreateError</pre></li>
+                  
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>            raise</pre></li>
+                  
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>        except DatabaseError:</pre></li>
+                  
+                  <li onclick="toggle('pre2003953549960', 'post2003953549960')"><pre>            if not must_create:</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003953549960')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003953549960">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>data</td>
+                    <td class="code"><pre>{&#39;email&#39;: &#39;kalluridinesh07@gmail.com&#39;}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>must_create</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>obj</td>
+                    <td class="code"><pre>&lt;Session: kpqmrnno13q20nx07oqr5q2oywi2upld&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.contrib.sessions.backends.db.SessionStore object at 0x000001D295604908&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>using</td>
+                    <td class="code"><pre>&#39;default&#39;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\base.py</code> in <code>save</code>
+
+          
+            <div class="context" id="c2003953549768">
+              
+                <ol start="734" class="pre-context" id="pre2003953549768">
+                
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>                if not field.primary_key and not hasattr(field, &#39;through&#39;):</pre></li>
+                
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>                    field_names.add(field.attname)</pre></li>
+                
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>            loaded_fields = field_names.difference(deferred_fields)</pre></li>
+                
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>            if loaded_fields:</pre></li>
+                
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>                update_fields = frozenset(loaded_fields)</pre></li>
+                
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>        self.save_base(using=using, force_insert=force_insert,</pre></li>
+                
+                </ol>
+              
+              <ol start="741" class="context-line">
+                <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>                       force_update=force_update, update_fields=update_fields)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='742' class="post-context" id="post2003953549768">
+                  
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>    save.alters_data = True</pre></li>
+                  
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>    def save_base(self, raw=False, force_insert=False,</pre></li>
+                  
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>                  force_update=False, using=None, update_fields=None):</pre></li>
+                  
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>        &quot;&quot;&quot;</pre></li>
+                  
+                  <li onclick="toggle('pre2003953549768', 'post2003953549768')"><pre>        Handle the parts of saving which should be done only once per save,</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003953549768')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003953549768">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>deferred_fields</td>
+                    <td class="code"><pre>set()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>field</td>
+                    <td class="code"><pre>&lt;django.db.models.fields.DateTimeField: expire_date&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>force_insert</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>force_update</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;Session: kpqmrnno13q20nx07oqr5q2oywi2upld&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>update_fields</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>using</td>
+                    <td class="code"><pre>&#39;default&#39;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\base.py</code> in <code>save_base</code>
+
+          
+            <div class="context" id="c2003956026504">
+              
+                <ol start="772" class="pre-context" id="pre2003956026504">
+                
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>            context_manager = transaction.mark_for_rollback_on_error(using=using)</pre></li>
+                
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>        with context_manager:</pre></li>
+                
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>            parent_inserted = False</pre></li>
+                
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>            if not raw:</pre></li>
+                
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>                parent_inserted = self._save_parents(cls, using, update_fields)</pre></li>
+                
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>            updated = self._save_table(</pre></li>
+                
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>                raw, cls, force_insert or parent_inserted,</pre></li>
+                
+                </ol>
+              
+              <ol start="779" class="context-line">
+                <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>                force_update, using, update_fields,</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='780' class="post-context" id="post2003956026504">
+                  
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>            )</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>        # Store the database on which the object was saved</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>        self._state.db = using</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>        # Once saved, this is no longer a to-be-added instance.</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre>        self._state.adding = False</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026504', 'post2003956026504')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003956026504')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003956026504">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>cls</td>
+                    <td class="code"><pre>&lt;class &#39;django.contrib.sessions.models.Session&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>context_manager</td>
+                    <td class="code"><pre>&lt;contextlib._GeneratorContextManager object at 0x000001D2951A4A90&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>force_insert</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>force_update</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>meta</td>
+                    <td class="code"><pre>&lt;Options for Session&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>origin</td>
+                    <td class="code"><pre>&lt;class &#39;django.contrib.sessions.models.Session&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>parent_inserted</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>raw</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;Session: kpqmrnno13q20nx07oqr5q2oywi2upld&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>update_fields</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>using</td>
+                    <td class="code"><pre>&#39;default&#39;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\base.py</code> in <code>_save_table</code>
+
+          
+            <div class="context" id="c2003956026440">
+              
+                <ol start="863" class="pre-context" id="pre2003956026440">
+                
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre>                self._order = order_value</pre></li>
+                
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre>            fields = meta.local_concrete_fields</pre></li>
+                
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre>            if not pk_set:</pre></li>
+                
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre>                fields = [f for f in fields if f is not meta.auto_field]</pre></li>
+                
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre>            update_pk = meta.auto_field and not pk_set</pre></li>
+                
+                </ol>
+              
+              <ol start="870" class="context-line">
+                <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre>            result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='871' class="post-context" id="post2003956026440">
+                  
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre>            if update_pk:</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre>                setattr(self, meta.pk.attname, result)</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre>        return updated</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre>    def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026440', 'post2003956026440')"><pre>        &quot;&quot;&quot;</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003956026440')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003956026440">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>cls</td>
+                    <td class="code"><pre>&lt;class &#39;django.contrib.sessions.models.Session&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>fields</td>
+                    <td class="code"><pre>(&lt;django.db.models.fields.CharField: session_key&gt;,
+ &lt;django.db.models.fields.TextField: session_data&gt;,
+ &lt;django.db.models.fields.DateTimeField: expire_date&gt;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>force_insert</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>force_update</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>meta</td>
+                    <td class="code"><pre>&lt;Options for Session&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>non_pks</td>
+                    <td class="code"><pre>[&lt;django.db.models.fields.TextField: session_data&gt;,
+ &lt;django.db.models.fields.DateTimeField: expire_date&gt;]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>pk_set</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>pk_val</td>
+                    <td class="code"><pre>&#39;kpqmrnno13q20nx07oqr5q2oywi2upld&#39;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>raw</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;Session: kpqmrnno13q20nx07oqr5q2oywi2upld&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>update_fields</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>update_pk</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>updated</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>using</td>
+                    <td class="code"><pre>&#39;default&#39;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\base.py</code> in <code>_do_insert</code>
+
+          
+            <div class="context" id="c2003956025864">
+              
+                <ol start="901" class="pre-context" id="pre2003956025864">
+                
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>    def _do_insert(self, manager, using, fields, update_pk, raw):</pre></li>
+                
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>        Do an INSERT. If update_pk is defined then this method should return</pre></li>
+                
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>        the new pk for the model.</pre></li>
+                
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>        return manager._insert([self], fields=fields, return_id=update_pk,</pre></li>
+                
+                </ol>
+              
+              <ol start="908" class="context-line">
+                <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>                               using=using, raw=raw)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='909' class="post-context" id="post2003956025864">
+                  
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>    def delete(self, using=None, keep_parents=False):</pre></li>
+                  
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>        using = using or router.db_for_write(self.__class__, instance=self)</pre></li>
+                  
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>        assert self.pk is not None, (</pre></li>
+                  
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>            &quot;%s object can&#39;t be deleted because its %s attribute is set to None.&quot; %</pre></li>
+                  
+                  <li onclick="toggle('pre2003956025864', 'post2003956025864')"><pre>            (self._meta.object_name, self._meta.pk.attname)</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003956025864')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003956025864">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>fields</td>
+                    <td class="code"><pre>(&lt;django.db.models.fields.CharField: session_key&gt;,
+ &lt;django.db.models.fields.TextField: session_data&gt;,
+ &lt;django.db.models.fields.DateTimeField: expire_date&gt;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>manager</td>
+                    <td class="code"><pre>&lt;django.db.models.manager.Manager object at 0x000001D295604358&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>raw</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;Session: kpqmrnno13q20nx07oqr5q2oywi2upld&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>update_pk</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>using</td>
+                    <td class="code"><pre>&#39;default&#39;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\manager.py</code> in <code>manager_method</code>
+
+          
+            <div class="context" id="c2003956026312">
+              
+                <ol start="75" class="pre-context" id="pre2003956026312">
+                
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>    def check(self, **kwargs):</pre></li>
+                
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>        return []</pre></li>
+                
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>    @classmethod</pre></li>
+                
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>    def _get_queryset_methods(cls, queryset_class):</pre></li>
+                
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>        def create_method(name, method):</pre></li>
+                
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>            def manager_method(self, *args, **kwargs):</pre></li>
+                
+                </ol>
+              
+              <ol start="82" class="context-line">
+                <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>                return getattr(self.get_queryset(), name)(*args, **kwargs)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='83' class="post-context" id="post2003956026312">
+                  
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>            manager_method.__name__ = method.__name__</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>            manager_method.__doc__ = method.__doc__</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>            return manager_method</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>        new_methods = {}</pre></li>
+                  
+                  <li onclick="toggle('pre2003956026312', 'post2003956026312')"><pre>        for name, method in inspect.getmembers(queryset_class, predicate=inspect.isfunction):</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003956026312')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003956026312">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>args</td>
+                    <td class="code"><pre>([&lt;Session: kpqmrnno13q20nx07oqr5q2oywi2upld&gt;],)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>kwargs</td>
+                    <td class="code"><pre>{&#39;fields&#39;: (&lt;django.db.models.fields.CharField: session_key&gt;,
+            &lt;django.db.models.fields.TextField: session_data&gt;,
+            &lt;django.db.models.fields.DateTimeField: expire_date&gt;),
+ &#39;raw&#39;: False,
+ &#39;return_id&#39;: None,
+ &#39;using&#39;: &#39;default&#39;}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>name</td>
+                    <td class="code"><pre>&#39;_insert&#39;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.models.manager.Manager object at 0x000001D295604358&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\query.py</code> in <code>_insert</code>
+
+          
+            <div class="context" id="c2003949100360">
+              
+                <ol start="1179" class="pre-context" id="pre2003949100360">
+                
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>        the InsertQuery class and is how Model.save() is implemented.</pre></li>
+                
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>        self._for_write = True</pre></li>
+                
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>        if using is None:</pre></li>
+                
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>            using = self.db</pre></li>
+                
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>        query = sql.InsertQuery(self.model, ignore_conflicts=ignore_conflicts)</pre></li>
+                
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>        query.insert_values(fields, objs, raw=raw)</pre></li>
+                
+                </ol>
+              
+              <ol start="1186" class="context-line">
+                <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>        return query.get_compiler(using=using).execute_sql(return_id)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='1187' class="post-context" id="post2003949100360">
+                  
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>    _insert.alters_data = True</pre></li>
+                  
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>    _insert.queryset_only = False</pre></li>
+                  
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>    def _batched_insert(self, objs, fields, batch_size, ignore_conflicts=False):</pre></li>
+                  
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>        &quot;&quot;&quot;</pre></li>
+                  
+                  <li onclick="toggle('pre2003949100360', 'post2003949100360')"><pre>        Helper method for bulk_create() to insert objs one batch at a time.</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003949100360')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003949100360">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>fields</td>
+                    <td class="code"><pre>(&lt;django.db.models.fields.CharField: session_key&gt;,
+ &lt;django.db.models.fields.TextField: session_data&gt;,
+ &lt;django.db.models.fields.DateTimeField: expire_date&gt;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>ignore_conflicts</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>objs</td>
+                    <td class="code"><pre>[&lt;Session: kpqmrnno13q20nx07oqr5q2oywi2upld&gt;]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>query</td>
+                    <td class="code"><pre>&lt;django.db.models.sql.subqueries.InsertQuery object at 0x000001D29551C390&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>raw</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>return_id</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;QuerySet [&lt;Session: ci90br0c5rcpjypkin8klputkiilh5ra&gt;, &lt;Session: xcxxi1scv5l6kwp6r0mr7iq73jl8hm3h&gt;, &lt;Session: j2l99ll3b36mic7hxudw6xhdutctyic6&gt;, &lt;Session: x20g47z3cg9hkn8vi7thu2g2frsxwdv2&gt;, &lt;Session: 3qurcboon3w4477l9dzy9jmvifz8y90k&gt;, &lt;Session: eha7iyd0zx31u6cqnqqhuepcctfxctzi&gt;]&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>using</td>
+                    <td class="code"><pre>&#39;default&#39;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\sql\compiler.py</code> in <code>execute_sql</code>
+
+          
+            <div class="context" id="c2003949099720">
+              
+                <ol start="1325" class="pre-context" id="pre2003949099720">
+                
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>        assert not (</pre></li>
+                
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>            return_id and len(self.query.objs) != 1 and</pre></li>
+                
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>            not self.connection.features.can_return_ids_from_bulk_insert</pre></li>
+                
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>        )</pre></li>
+                
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>        self.return_id = return_id</pre></li>
+                
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>        with self.connection.cursor() as cursor:</pre></li>
+                
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>            for sql, params in self.as_sql():</pre></li>
+                
+                </ol>
+              
+              <ol start="1332" class="context-line">
+                <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>                cursor.execute(sql, params)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='1333' class="post-context" id="post2003949099720">
+                  
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>            if not return_id:</pre></li>
+                  
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>                return</pre></li>
+                  
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>            if self.connection.features.can_return_ids_from_bulk_insert and len(self.query.objs) &gt; 1:</pre></li>
+                  
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>                return self.connection.ops.fetch_returned_insert_ids(cursor)</pre></li>
+                  
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>            if self.connection.features.can_return_id_from_insert:</pre></li>
+                  
+                  <li onclick="toggle('pre2003949099720', 'post2003949099720')"><pre>                assert len(self.query.objs) == 1</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003949099720')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003949099720">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>cursor</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>(&#39;kpqmrnno13q20nx07oqr5q2oywi2upld&#39;,
+ &#39;MmUxNGVhY2Y0ZDViNWFiOTMzZmJlYmYzNWEyMTEwZTc0MDMwNGY0Njp7ImVtYWlsIjoia2FsbHVyaWRpbmVzaDA3QGdtYWlsLmNvbSJ9&#39;,
+ &#39;2023-10-18 18:05:40.021411&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>return_id</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.models.sql.compiler.SQLInsertCompiler object at 0x000001D29551C400&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>(&#39;INSERT INTO &quot;django_session&quot; (&quot;session_key&quot;, &quot;session_data&quot;, &quot;expire_date&quot;) &#39;
+ &#39;SELECT %s, %s, %s&#39;)</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py</code> in <code>execute</code>
+
+          
+            <div class="context" id="c2003949100552">
+              
+                <ol start="92" class="pre-context" id="pre2003949100552">
+                
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>class CursorDebugWrapper(CursorWrapper):</pre></li>
+                
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>    # XXX callproc isn&#39;t instrumented at this time.</pre></li>
+                
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>    def execute(self, sql, params=None):</pre></li>
+                
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>        start = time()</pre></li>
+                
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>        try:</pre></li>
+                
+                </ol>
+              
+              <ol start="99" class="context-line">
+                <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>            return super().execute(sql, params)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='100' class="post-context" id="post2003949100552">
+                  
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>        finally:</pre></li>
+                  
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>            stop = time()</pre></li>
+                  
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>            duration = stop - start</pre></li>
+                  
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>            sql = self.db.ops.last_executed_query(self.cursor, sql, params)</pre></li>
+                  
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>            self.db.queries_log.append({</pre></li>
+                  
+                  <li onclick="toggle('pre2003949100552', 'post2003949100552')"><pre>                &#39;sql&#39;: sql,</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003949100552')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003949100552">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>__class__</td>
+                    <td class="code"><pre>&lt;class &#39;django.db.backends.utils.CursorDebugWrapper&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>duration</td>
+                    <td class="code"><pre>0.0005102157592773438</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>(&#39;kpqmrnno13q20nx07oqr5q2oywi2upld&#39;,
+ &#39;MmUxNGVhY2Y0ZDViNWFiOTMzZmJlYmYzNWEyMTEwZTc0MDMwNGY0Njp7ImVtYWlsIjoia2FsbHVyaWRpbmVzaDA3QGdtYWlsLmNvbSJ9&#39;,
+ &#39;2023-10-18 18:05:40.021411&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>(&#39;INSERT INTO &quot;django_session&quot; (&quot;session_key&quot;, &quot;session_data&quot;, &quot;expire_date&quot;) &#39;
+ &quot;SELECT &#39;kpqmrnno13q20nx07oqr5q2oywi2upld&#39;, &quot;
+ &quot;&#39;MmUxNGVhY2Y0ZDViNWFiOTMzZmJlYmYzNWEyMTEwZTc0MDMwNGY0Njp7ImVtYWlsIjoia2FsbHVyaWRpbmVzaDA3QGdtYWlsLmNvbSJ9&#39;, &quot;
+ &quot;&#39;2023-10-18 18:05:40.021411&#39;&quot;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>start</td>
+                    <td class="code"><pre>1696442740.021622</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>stop</td>
+                    <td class="code"><pre>1696442740.0221322</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py</code> in <code>execute</code>
+
+          
+            <div class="context" id="c2003949098568">
+              
+                <ol start="60" class="pre-context" id="pre2003949098568">
+                
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre>            elif kparams is None:</pre></li>
+                
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre>                return self.cursor.callproc(procname, params)</pre></li>
+                
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre>            else:</pre></li>
+                
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre>                params = params or ()</pre></li>
+                
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre>                return self.cursor.callproc(procname, params, kparams)</pre></li>
+                
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre>    def execute(self, sql, params=None):</pre></li>
+                
+                </ol>
+              
+              <ol start="67" class="context-line">
+                <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre>        return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='68' class="post-context" id="post2003949098568">
+                  
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre>    def executemany(self, sql, param_list):</pre></li>
+                  
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre>        return self._execute_with_wrappers(sql, param_list, many=True, executor=self._executemany)</pre></li>
+                  
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre>    def _execute_with_wrappers(self, sql, params, many, executor):</pre></li>
+                  
+                  <li onclick="toggle('pre2003949098568', 'post2003949098568')"><pre>        context = {&#39;connection&#39;: self.db, &#39;cursor&#39;: self}</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003949098568')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003949098568">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>(&#39;kpqmrnno13q20nx07oqr5q2oywi2upld&#39;,
+ &#39;MmUxNGVhY2Y0ZDViNWFiOTMzZmJlYmYzNWEyMTEwZTc0MDMwNGY0Njp7ImVtYWlsIjoia2FsbHVyaWRpbmVzaDA3QGdtYWlsLmNvbSJ9&#39;,
+ &#39;2023-10-18 18:05:40.021411&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>(&#39;INSERT INTO &quot;django_session&quot; (&quot;session_key&quot;, &quot;session_data&quot;, &quot;expire_date&quot;) &#39;
+ &#39;SELECT %s, %s, %s&#39;)</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py</code> in <code>_execute_with_wrappers</code>
+
+          
+            <div class="context" id="c2003949099464">
+              
+                <ol start="69" class="pre-context" id="pre2003949099464">
+                
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>    def executemany(self, sql, param_list):</pre></li>
+                
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>        return self._execute_with_wrappers(sql, param_list, many=True, executor=self._executemany)</pre></li>
+                
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>    def _execute_with_wrappers(self, sql, params, many, executor):</pre></li>
+                
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>        context = {&#39;connection&#39;: self.db, &#39;cursor&#39;: self}</pre></li>
+                
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>        for wrapper in reversed(self.db.execute_wrappers):</pre></li>
+                
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>            executor = functools.partial(wrapper, executor)</pre></li>
+                
+                </ol>
+              
+              <ol start="76" class="context-line">
+                <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>        return executor(sql, params, many, context)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='77' class="post-context" id="post2003949099464">
+                  
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                  
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>            if params is None:</pre></li>
+                  
+                  <li onclick="toggle('pre2003949099464', 'post2003949099464')"><pre>                return self.cursor.execute(sql)</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003949099464')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003949099464">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>{&#39;connection&#39;: &lt;django.db.backends.sqlite3.base.DatabaseWrapper object at 0x000001D295604438&gt;,
+ &#39;cursor&#39;: &lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>executor</td>
+                    <td class="code"><pre>&lt;bound method CursorWrapper._execute of &lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>many</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>(&#39;kpqmrnno13q20nx07oqr5q2oywi2upld&#39;,
+ &#39;MmUxNGVhY2Y0ZDViNWFiOTMzZmJlYmYzNWEyMTEwZTc0MDMwNGY0Njp7ImVtYWlsIjoia2FsbHVyaWRpbmVzaDA3QGdtYWlsLmNvbSJ9&#39;,
+ &#39;2023-10-18 18:05:40.021411&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>(&#39;INSERT INTO &quot;django_session&quot; (&quot;session_key&quot;, &quot;session_data&quot;, &quot;expire_date&quot;) &#39;
+ &#39;SELECT %s, %s, %s&#39;)</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py</code> in <code>_execute</code>
+
+          
+            <div class="context" id="c2003945766088">
+              
+                <ol start="77" class="pre-context" id="pre2003945766088">
+                
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre>            if params is None:</pre></li>
+                
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre>                return self.cursor.execute(sql)</pre></li>
+                
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre>            else:</pre></li>
+                
+                </ol>
+              
+              <ol start="84" class="context-line">
+                <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre>                return self.cursor.execute(sql, params)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='85' class="post-context" id="post2003945766088">
+                  
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre>    def _executemany(self, sql, param_list, *ignored_wrapper_args):</pre></li>
+                  
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
+                  
+                  <li onclick="toggle('pre2003945766088', 'post2003945766088')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003945766088')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003945766088">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>ignored_wrapper_args</td>
+                    <td class="code"><pre>(False,
+ {&#39;connection&#39;: &lt;django.db.backends.sqlite3.base.DatabaseWrapper object at 0x000001D295604438&gt;,
+  &#39;cursor&#39;: &lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;})</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>(&#39;kpqmrnno13q20nx07oqr5q2oywi2upld&#39;,
+ &#39;MmUxNGVhY2Y0ZDViNWFiOTMzZmJlYmYzNWEyMTEwZTc0MDMwNGY0Njp7ImVtYWlsIjoia2FsbHVyaWRpbmVzaDA3QGdtYWlsLmNvbSJ9&#39;,
+ &#39;2023-10-18 18:05:40.021411&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>(&#39;INSERT INTO &quot;django_session&quot; (&quot;session_key&quot;, &quot;session_data&quot;, &quot;expire_date&quot;) &#39;
+ &#39;SELECT %s, %s, %s&#39;)</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\utils.py</code> in <code>__exit__</code>
+
+          
+            <div class="context" id="c2003945766536">
+              
+                <ol start="82" class="pre-context" id="pre2003945766536">
+                
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>            db_exc_type = getattr(self.wrapper.Database, dj_exc_type.__name__)</pre></li>
+                
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>            if issubclass(exc_type, db_exc_type):</pre></li>
+                
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>                dj_exc_value = dj_exc_type(*exc_value.args)</pre></li>
+                
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>                # Only set the &#39;errors_occurred&#39; flag for errors that may make</pre></li>
+                
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>                # the connection unusable.</pre></li>
+                
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>                if dj_exc_type not in (DataError, IntegrityError):</pre></li>
+                
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>                    self.wrapper.errors_occurred = True</pre></li>
+                
+                </ol>
+              
+              <ol start="89" class="context-line">
+                <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>                raise dj_exc_value.with_traceback(traceback) from exc_value</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='90' class="post-context" id="post2003945766536">
+                  
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>    def __call__(self, func):</pre></li>
+                  
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>        # Note that we are intentionally not using @wraps here for performance</pre></li>
+                  
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>        # reasons. Refs #21109.</pre></li>
+                  
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>        def inner(*args, **kwargs):</pre></li>
+                  
+                  <li onclick="toggle('pre2003945766536', 'post2003945766536')"><pre>            with self:</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003945766536')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003945766536">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>db_exc_type</td>
+                    <td class="code"><pre>&lt;class &#39;sqlite3.OperationalError&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>dj_exc_type</td>
+                    <td class="code"><pre>&lt;class &#39;django.db.utils.OperationalError&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>dj_exc_value</td>
+                    <td class="code"><pre>OperationalError(&#39;attempt to write a readonly database&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>exc_type</td>
+                    <td class="code"><pre>&lt;class &#39;sqlite3.OperationalError&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>exc_value</td>
+                    <td class="code"><pre>OperationalError(&#39;attempt to write a readonly database&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.utils.DatabaseErrorWrapper object at 0x000001D295604860&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>traceback</td>
+                    <td class="code"><pre>&lt;traceback object at 0x000001D294BAE188&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py</code> in <code>_execute</code>
+
+          
+            <div class="context" id="c2003950035336">
+              
+                <ol start="77" class="pre-context" id="pre2003950035336">
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>            if params is None:</pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>                return self.cursor.execute(sql)</pre></li>
+                
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>            else:</pre></li>
+                
+                </ol>
+              
+              <ol start="84" class="context-line">
+                <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>                return self.cursor.execute(sql, params)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='85' class="post-context" id="post2003950035336">
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>    def _executemany(self, sql, param_list, *ignored_wrapper_args):</pre></li>
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
+                  
+                  <li onclick="toggle('pre2003950035336', 'post2003950035336')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003950035336')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003950035336">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>ignored_wrapper_args</td>
+                    <td class="code"><pre>(False,
+ {&#39;connection&#39;: &lt;django.db.backends.sqlite3.base.DatabaseWrapper object at 0x000001D295604438&gt;,
+  &#39;cursor&#39;: &lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;})</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>(&#39;kpqmrnno13q20nx07oqr5q2oywi2upld&#39;,
+ &#39;MmUxNGVhY2Y0ZDViNWFiOTMzZmJlYmYzNWEyMTEwZTc0MDMwNGY0Njp7ImVtYWlsIjoia2FsbHVyaWRpbmVzaDA3QGdtYWlsLmNvbSJ9&#39;,
+ &#39;2023-10-18 18:05:40.021411&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x000001D29551C438&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>(&#39;INSERT INTO &quot;django_session&quot; (&quot;session_key&quot;, &quot;session_data&quot;, &quot;expire_date&quot;) &#39;
+ &#39;SELECT %s, %s, %s&#39;)</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\sqlite3\base.py</code> in <code>execute</code>
+
+          
+            <div class="context" id="c2003949457992">
+              
+                <ol start="376" class="pre-context" id="pre2003949457992">
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    This fixes it -- but note that if you want to use a literal &quot;%s&quot; in a query,</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    you&#39;ll need to use &quot;%%s&quot;.</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    def execute(self, query, params=None):</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>        if params is None:</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>            return Database.Cursor.execute(self, query)</pre></li>
+                
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>        query = self.convert_query(query)</pre></li>
+                
+                </ol>
+              
+              <ol start="383" class="context-line">
+                <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>        return Database.Cursor.execute(self, query, params)</pre> <span>â€¦</span></li>
+              </ol>
+              
+                <ol start='384' class="post-context" id="post2003949457992">
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    def executemany(self, query, param_list):</pre></li>
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>        query = self.convert_query(query)</pre></li>
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>        return Database.Cursor.executemany(self, query, param_list)</pre></li>
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre2003949457992', 'post2003949457992')"><pre>    def convert_query(self, query):</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '2003949457992')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v2003949457992">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>(&#39;kpqmrnno13q20nx07oqr5q2oywi2upld&#39;,
+ &#39;MmUxNGVhY2Y0ZDViNWFiOTMzZmJlYmYzNWEyMTEwZTc0MDMwNGY0Njp7ImVtYWlsIjoia2FsbHVyaWRpbmVzaDA3QGdtYWlsLmNvbSJ9&#39;,
+ &#39;2023-10-18 18:05:40.021411&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>query</td>
+                    <td class="code"><pre>(&#39;INSERT INTO &quot;django_session&quot; (&quot;session_key&quot;, &quot;session_data&quot;, &quot;expire_date&quot;) &#39;
+ &#39;SELECT ?, ?, ?&#39;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.sqlite3.base.SQLiteCursorWrapper object at 0x000001D2951BF438&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+    </ul>
+  </div>
+  <form action="http://dpaste.com/" name="pasteform" id="pasteform" method="post">
+
+  <div id="pastebinTraceback" class="pastebin">
+    <input type="hidden" name="language" value="PythonConsole">
+    <input type="hidden" name="title"
+      value="OperationalError at /farmerlogincheck/">
+    <input type="hidden" name="source" value="Django Dpaste Agent">
+    <input type="hidden" name="poster" value="Django">
+    <textarea name="content" id="traceback_area" cols="140" rows="25">
+Environment:
+
+
+Request Method: POST
+Request URL: http://127.0.0.1:8000/farmerlogincheck/
+
+Django Version: 2.2
+Python Version: 3.7.0
+Installed Applications:
+[&#39;django.contrib.admin&#39;,
+ &#39;django.contrib.auth&#39;,
+ &#39;django.contrib.contenttypes&#39;,
+ &#39;django.contrib.sessions&#39;,
+ &#39;django.contrib.messages&#39;,
+ &#39;django.contrib.staticfiles&#39;,
+ &#39;farmers&#39;,
+ &#39;admn&#39;]
+Installed Middleware:
+[&#39;django.middleware.security.SecurityMiddleware&#39;,
+ &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+ &#39;django.middleware.common.CommonMiddleware&#39;,
+ &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+ &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+ &#39;django.contrib.messages.middleware.MessageMiddleware&#39;,
+ &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;]
+
+
+
+Traceback:
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py" in _execute
+  84.                 return self.cursor.execute(sql, params)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\sqlite3\base.py" in execute
+  383.         return Database.Cursor.execute(self, query, params)
+
+The above exception (attempt to write a readonly database) was the direct cause of the following exception:
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\core\handlers\exception.py" in inner
+  34.             response = get_response(request)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\utils\deprecation.py" in __call__
+  96.             response = self.process_response(request, response)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\contrib\sessions\middleware.py" in process_response
+  58.                             request.session.save()
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\contrib\sessions\backends\db.py" in save
+  81.             return self.create()
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\contrib\sessions\backends\db.py" in create
+  55.                 self.save(must_create=True)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\contrib\sessions\backends\db.py" in save
+  87.                 obj.save(force_insert=must_create, force_update=not must_create, using=using)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\base.py" in save
+  741.                        force_update=force_update, update_fields=update_fields)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\base.py" in save_base
+  779.                 force_update, using, update_fields,
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\base.py" in _save_table
+  870.             result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\base.py" in _do_insert
+  908.                                using=using, raw=raw)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\manager.py" in manager_method
+  82.                 return getattr(self.get_queryset(), name)(*args, **kwargs)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\query.py" in _insert
+  1186.         return query.get_compiler(using=using).execute_sql(return_id)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\models\sql\compiler.py" in execute_sql
+  1332.                 cursor.execute(sql, params)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py" in execute
+  99.             return super().execute(sql, params)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py" in execute
+  67.         return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py" in _execute_with_wrappers
+  76.         return executor(sql, params, many, context)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py" in _execute
+  84.                 return self.cursor.execute(sql, params)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\utils.py" in __exit__
+  89.                 raise dj_exc_value.with_traceback(traceback) from exc_value
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\utils.py" in _execute
+  84.                 return self.cursor.execute(sql, params)
+
+File "C:\Users\Dinesh\AppData\Roaming\Python\Python37\site-packages\django\db\backends\sqlite3\base.py" in execute
+  383.         return Database.Cursor.execute(self, query, params)
+
+Exception Type: OperationalError at /farmerlogincheck/
+Exception Value: attempt to write a readonly database
+</textarea>
+  <br><br>
+  <input type="submit" value="Share this traceback on a public website">
+  </div>
+</form>
+</div>
+
+
+
+<div id="requestinfo">
+  <h2>Request information</h2>
+
+
+  
+    <h3 id="user-info">USER</h3>
+    <p>AnonymousUser</p>
+  
+
+  <h3 id="get-info">GET</h3>
+  
+    <p>No GET data</p>
+  
+
+  <h3 id="post-info">POST</h3>
+  
+    <table class="req">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td>csrfmiddlewaretoken</td>
+            <td class="code"><pre>&#39;3oX2L6lm86lISQA68JWv4DQHiXZdVeHEcreO3xeuy7oHuSmt4rA144CKS6TdMMkZ&#39;</pre></td>
+          </tr>
+        
+          <tr>
+            <td>email</td>
+            <td class="code"><pre>&#39;kalluridinesh07@gmail.com&#39;</pre></td>
+          </tr>
+        
+          <tr>
+            <td>pswd</td>
+            <td class="code"><pre>&#39;527&#39;</pre></td>
+          </tr>
+        
+      </tbody>
+    </table>
+  
+  <h3 id="files-info">FILES</h3>
+  
+    <p>No FILES data</p>
+  
+
+
+  <h3 id="cookie-info">COOKIES</h3>
+  
+    <table class="req">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td>localauth</td>
+            <td class="code"><pre>&#39;localapifa0138c01350a572:&#39;</pre></td>
+          </tr>
+        
+          <tr>
+            <td>isNotIncognito</td>
+            <td class="code"><pre>&#39;true&#39;</pre></td>
+          </tr>
+        
+          <tr>
+            <td>_ga</td>
+            <td class="code"><pre>&#39;GA1.1.865461c2aff8ed118b2f2c6dc17e31b3&#39;</pre></td>
+          </tr>
+        
+          <tr>
+            <td>_ga_Z28525QR15</td>
+            <td class="code"><pre>&#39;GS1.1.1692245635.1.1.1692245662.0.0.0&#39;</pre></td>
+          </tr>
+        
+          <tr>
+            <td>csrftoken</td>
+            <td class="code"><pre>&#39;5tho6eZ0fV7VkuhATxB5qpAoyEkr9e70ewyaoFS8FWaUWw3XPffBqQmr8Ner0MKl&#39;</pre></td>
+          </tr>
+        
+      </tbody>
+    </table>
+  
+
+  <h3 id="meta-info">META</h3>
+  <table class="req">
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td>ALLUSERSPROFILE</td>
+          <td class="code"><pre>&#39;C:\\ProgramData&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>APPDATA</td>
+          <td class="code"><pre>&#39;C:\\Users\\Dinesh\\AppData\\Roaming&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMMONPROGRAMFILES</td>
+          <td class="code"><pre>&#39;C:\\Program Files\\Common Files&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMMONPROGRAMFILES(X86)</td>
+          <td class="code"><pre>&#39;C:\\Program Files (x86)\\Common Files&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMMONPROGRAMW6432</td>
+          <td class="code"><pre>&#39;C:\\Program Files\\Common Files&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPUTERNAME</td>
+          <td class="code"><pre>&#39;LAPTOP-B066D6RE&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMSPEC</td>
+          <td class="code"><pre>&#39;C:\\WINDOWS\\system32\\cmd.exe&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CONTENT_LENGTH</td>
+          <td class="code"><pre>&#39;127&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CONTENT_TYPE</td>
+          <td class="code"><pre>&#39;application/x-www-form-urlencoded&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE</td>
+          <td class="code"><pre>&#39;5tho6eZ0fV7VkuhATxB5qpAoyEkr9e70ewyaoFS8FWaUWw3XPffBqQmr8Ner0MKl&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DJANGO_SETTINGS_MODULE</td>
+          <td class="code"><pre>&#39;agricultural.settings&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DRIVERDATA</td>
+          <td class="code"><pre>&#39;C:\\Windows\\System32\\Drivers\\DriverData&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EFC_892</td>
+          <td class="code"><pre>&#39;1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GATEWAY_INTERFACE</td>
+          <td class="code"><pre>&#39;CGI/1.1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HOMEDRIVE</td>
+          <td class="code"><pre>&#39;C:&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HOMEPATH</td>
+          <td class="code"><pre>&#39;\\Users\\Dinesh&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_ACCEPT</td>
+          <td class="code"><pre>&#39;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_ACCEPT_ENCODING</td>
+          <td class="code"><pre>&#39;gzip, deflate, br&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_ACCEPT_LANGUAGE</td>
+          <td class="code"><pre>&#39;en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7,te;q=0.6&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_CACHE_CONTROL</td>
+          <td class="code"><pre>&#39;max-age=0&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_CONNECTION</td>
+          <td class="code"><pre>&#39;keep-alive&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_COOKIE</td>
+          <td class="code"><pre>(&#39;localauth=localapifa0138c01350a572:; isNotIncognito=true; &#39;
+ &#39;_ga=GA1.1.865461c2aff8ed118b2f2c6dc17e31b3; &#39;
+ &#39;_ga_Z28525QR15=GS1.1.1692245635.1.1.1692245662.0.0.0; &#39;
+ &#39;csrftoken=5tho6eZ0fV7VkuhATxB5qpAoyEkr9e70ewyaoFS8FWaUWw3XPffBqQmr8Ner0MKl&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_HOST</td>
+          <td class="code"><pre>&#39;127.0.0.1:8000&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_ORIGIN</td>
+          <td class="code"><pre>&#39;http://127.0.0.1:8000&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_REFERER</td>
+          <td class="code"><pre>&#39;http://127.0.0.1:8000/farmerlogincheck/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_SEC_CH_UA</td>
+          <td class="code"><pre>&#39;&quot;Google Chrome&quot;;v=&quot;117&quot;, &quot;Not;A=Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;117&quot;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_SEC_CH_UA_MOBILE</td>
+          <td class="code"><pre>&#39;?0&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_SEC_CH_UA_PLATFORM</td>
+          <td class="code"><pre>&#39;&quot;Windows&quot;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_SEC_FETCH_DEST</td>
+          <td class="code"><pre>&#39;document&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_SEC_FETCH_MODE</td>
+          <td class="code"><pre>&#39;navigate&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_SEC_FETCH_SITE</td>
+          <td class="code"><pre>&#39;same-origin&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_SEC_FETCH_USER</td>
+          <td class="code"><pre>&#39;?1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_UPGRADE_INSECURE_REQUESTS</td>
+          <td class="code"><pre>&#39;1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_USER_AGENT</td>
+          <td class="code"><pre>(&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like &#39;
+ &#39;Gecko) Chrome/117.0.0.0 Safari/537.36&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>JAVA_HOME</td>
+          <td class="code"><pre>&#39;C:\\Program Files\\Java\\jdk-18.0.2.1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOCALAPPDATA</td>
+          <td class="code"><pre>&#39;C:\\Users\\Dinesh\\AppData\\Local&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGONSERVER</td>
+          <td class="code"><pre>&#39;\\\\LAPTOP-B066D6RE&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>NUMBER_OF_PROCESSORS</td>
+          <td class="code"><pre>&#39;8&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ONEDRIVE</td>
+          <td class="code"><pre>&#39;C:\\Users\\Dinesh\\OneDrive&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ONEDRIVECONSUMER</td>
+          <td class="code"><pre>&#39;C:\\Users\\Dinesh\\OneDrive&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>OS</td>
+          <td class="code"><pre>&#39;Windows_NT&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PATH</td>
+          <td class="code"><pre>(&#39;C:\\Program Files\\Python37\\Scripts\\;C:\\Program &#39;
+ &#39;Files\\Python37\\;C:\\Program Files\\Common &#39;
+ &#39;Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program &#39;
+ &#39;Files\\Java\\jdk-18.0.2.1\\bin;C:\\Users\\Dinesh\\AppData\\Roaming\\Microsoft\\Windows\\Start &#39;
+ &#39;Menu\\Programs\\Python 3.7;C:\\Program Files\\Git\\cmd;C:\\Program &#39;
+ &#39;Files\\PowerShell\\7\\;C:\\Users\\Dinesh\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\;C:\\Users\\Dinesh\\AppData\\Local\\Programs\\Python\\Python311\\;C:\\Users\\Dinesh\\AppData\\Local\\Programs\\Python\\Python36\\Scripts\\;C:\\Users\\Dinesh\\AppData\\Local\\Programs\\Python\\Python36\\;C:\\Users\\Dinesh\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\Dinesh\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\Dinesh\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Dinesh\\AppData\\Local\\Programs\\Microsoft &#39;
+ &#39;VS &#39;
+ &#39;Code\\bin;C:\\Users\\Dinesh\\AppData\\Local\\atom\\bin;C:\\Users\\Dinesh\\AppData\\Local\\Microsoft\\WindowsApps;C:\\ProgramData\\Dinesh\\atom\\bin;&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PATHEXT</td>
+          <td class="code"><pre>&#39;.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PATH_INFO</td>
+          <td class="code"><pre>&#39;/farmerlogincheck/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>POWERSHELL_DISTRIBUTION_CHANNEL</td>
+          <td class="code"><pre>&#39;MSI:Windows 10 Home Single Language&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROCESSOR_ARCHITECTURE</td>
+          <td class="code"><pre>&#39;AMD64&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROCESSOR_IDENTIFIER</td>
+          <td class="code"><pre>&#39;Intel64 Family 6 Model 142 Stepping 12, GenuineIntel&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROCESSOR_LEVEL</td>
+          <td class="code"><pre>&#39;6&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROCESSOR_REVISION</td>
+          <td class="code"><pre>&#39;8e0c&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROGRAMDATA</td>
+          <td class="code"><pre>&#39;C:\\ProgramData&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROGRAMFILES</td>
+          <td class="code"><pre>&#39;C:\\Program Files&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROGRAMFILES(X86)</td>
+          <td class="code"><pre>&#39;C:\\Program Files (x86)&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROGRAMW6432</td>
+          <td class="code"><pre>&#39;C:\\Program Files&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROMPT</td>
+          <td class="code"><pre>&#39;$P$G&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PSMODULEPATH</td>
+          <td class="code"><pre>(&#39;C:\\Program &#39;
+ &#39;Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PUBLIC</td>
+          <td class="code"><pre>&#39;C:\\Users\\Public&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PYTHON</td>
+          <td class="code"><pre>(&#39;C:\\Users\\Dinesh\\AppData\\Roaming\\Microsoft\\Windows\\Start &#39;
+ &#39;Menu\\Programs\\Python 3.11&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>QUERY_STRING</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REMOTE_ADDR</td>
+          <td class="code"><pre>&#39;127.0.0.1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REMOTE_HOST</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REQUEST_METHOD</td>
+          <td class="code"><pre>&#39;POST&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>RUN_MAIN</td>
+          <td class="code"><pre>&#39;true&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SCRIPT_NAME</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_NAME</td>
+          <td class="code"><pre>&#39;LAPTOP-B066D6RE&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_PORT</td>
+          <td class="code"><pre>&#39;8000&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_PROTOCOL</td>
+          <td class="code"><pre>&#39;HTTP/1.1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_SOFTWARE</td>
+          <td class="code"><pre>&#39;WSGIServer/0.2&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSIONNAME</td>
+          <td class="code"><pre>&#39;Console&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SYSTEMDRIVE</td>
+          <td class="code"><pre>&#39;C:&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SYSTEMROOT</td>
+          <td class="code"><pre>&#39;C:\\WINDOWS&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEMP</td>
+          <td class="code"><pre>&#39;C:\\Users\\Dinesh\\AppData\\Local\\Temp&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TMP</td>
+          <td class="code"><pre>&#39;C:\\Users\\Dinesh\\AppData\\Local\\Temp&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USERDOMAIN</td>
+          <td class="code"><pre>&#39;LAPTOP-B066D6RE&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USERDOMAIN_ROAMINGPROFILE</td>
+          <td class="code"><pre>&#39;LAPTOP-B066D6RE&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USERNAME</td>
+          <td class="code"><pre>&#39;Dinesh&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USERPROFILE</td>
+          <td class="code"><pre>&#39;C:\\Users\\Dinesh&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>WINDIR</td>
+          <td class="code"><pre>&#39;C:\\WINDOWS&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ZES_ENABLE_SYSMAN</td>
+          <td class="code"><pre>&#39;1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.errors</td>
+          <td class="code"><pre>&lt;_io.TextIOWrapper name=&#39;&lt;stderr&gt;&#39; mode=&#39;w&#39; encoding=&#39;utf-8&#39;&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.file_wrapper</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.input</td>
+          <td class="code"><pre>&lt;django.core.handlers.wsgi.LimitedStream object at 0x000001D295120EB8&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.multiprocess</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.multithread</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.run_once</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.url_scheme</td>
+          <td class="code"><pre>&#39;http&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.version</td>
+          <td class="code"><pre>(1, 0)</pre></td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+  <h3 id="settings-info">Settings</h3>
+  <h4>Using settings module <code>agricultural.settings</code></h4>
+  <table class="req">
+    <thead>
+      <tr>
+        <th>Setting</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td>ABSOLUTE_URL_OVERRIDES</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ADMINS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ALLOWED_HOSTS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>APPEND_SLASH</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>AUTHENTICATION_BACKENDS</td>
+          <td class="code"><pre>[&#39;django.contrib.auth.backends.ModelBackend&#39;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>AUTH_PASSWORD_VALIDATORS</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>AUTH_USER_MODEL</td>
+          <td class="code"><pre>&#39;auth.User&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>BASE_DIR</td>
+          <td class="code"><pre>&#39;C:\\Desktop\\MINI PRPOJECT WORK\\MINI PROJECT\\code&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHES</td>
+          <td class="code"><pre>{&#39;default&#39;: {&#39;BACKEND&#39;: &#39;django.core.cache.backends.locmem.LocMemCache&#39;}}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_ALIAS</td>
+          <td class="code"><pre>&#39;default&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_KEY_PREFIX</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_SECONDS</td>
+          <td class="code"><pre>600</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_AGE</td>
+          <td class="code"><pre>31449600</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_DOMAIN</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_HTTPONLY</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_NAME</td>
+          <td class="code"><pre>&#39;csrftoken&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_PATH</td>
+          <td class="code"><pre>&#39;/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_SAMESITE</td>
+          <td class="code"><pre>&#39;Lax&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_SECURE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_FAILURE_VIEW</td>
+          <td class="code"><pre>&#39;django.views.csrf.csrf_failure&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_HEADER_NAME</td>
+          <td class="code"><pre>&#39;HTTP_X_CSRFTOKEN&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_TRUSTED_ORIGINS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_USE_SESSIONS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASES</td>
+          <td class="code"><pre>{&#39;default&#39;: {&#39;ATOMIC_REQUESTS&#39;: False,
+             &#39;AUTOCOMMIT&#39;: True,
+             &#39;CONN_MAX_AGE&#39;: 0,
+             &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,
+             &#39;HOST&#39;: &#39;&#39;,
+             &#39;NAME&#39;: &#39;C:\\Desktop\\MINI PRPOJECT WORK\\MINI &#39;
+                     &#39;PROJECT\\code\\db.sqlite3&#39;,
+             &#39;OPTIONS&#39;: {},
+             &#39;PASSWORD&#39;: &#39;********************&#39;,
+             &#39;PORT&#39;: &#39;&#39;,
+             &#39;TEST&#39;: {&#39;CHARSET&#39;: None,
+                      &#39;COLLATION&#39;: None,
+                      &#39;MIRROR&#39;: None,
+                      &#39;NAME&#39;: None},
+             &#39;TIME_ZONE&#39;: None,
+             &#39;USER&#39;: &#39;&#39;}}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASE_ROUTERS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATA_UPLOAD_MAX_MEMORY_SIZE</td>
+          <td class="code"><pre>2621440</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATA_UPLOAD_MAX_NUMBER_FIELDS</td>
+          <td class="code"><pre>1000</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATETIME_FORMAT</td>
+          <td class="code"><pre>&#39;N j, Y, P&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATETIME_INPUT_FORMATS</td>
+          <td class="code"><pre>[&#39;%Y-%m-%d %H:%M:%S&#39;,
+ &#39;%Y-%m-%d %H:%M:%S.%f&#39;,
+ &#39;%Y-%m-%d %H:%M&#39;,
+ &#39;%Y-%m-%d&#39;,
+ &#39;%m/%d/%Y %H:%M:%S&#39;,
+ &#39;%m/%d/%Y %H:%M:%S.%f&#39;,
+ &#39;%m/%d/%Y %H:%M&#39;,
+ &#39;%m/%d/%Y&#39;,
+ &#39;%m/%d/%y %H:%M:%S&#39;,
+ &#39;%m/%d/%y %H:%M:%S.%f&#39;,
+ &#39;%m/%d/%y %H:%M&#39;,
+ &#39;%m/%d/%y&#39;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATE_FORMAT</td>
+          <td class="code"><pre>&#39;N j, Y&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATE_INPUT_FORMATS</td>
+          <td class="code"><pre>[&#39;%Y-%m-%d&#39;,
+ &#39;%m/%d/%Y&#39;,
+ &#39;%m/%d/%y&#39;,
+ &#39;%b %d %Y&#39;,
+ &#39;%b %d, %Y&#39;,
+ &#39;%d %b %Y&#39;,
+ &#39;%d %b, %Y&#39;,
+ &#39;%B %d %Y&#39;,
+ &#39;%B %d, %Y&#39;,
+ &#39;%d %B %Y&#39;,
+ &#39;%d %B, %Y&#39;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEBUG</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEBUG_PROPAGATE_EXCEPTIONS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DECIMAL_SEPARATOR</td>
+          <td class="code"><pre>&#39;.&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_CHARSET</td>
+          <td class="code"><pre>&#39;utf-8&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_CONTENT_TYPE</td>
+          <td class="code"><pre>&#39;text/html&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_EXCEPTION_REPORTER_FILTER</td>
+          <td class="code"><pre>&#39;django.views.debug.SafeExceptionReporterFilter&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_FILE_STORAGE</td>
+          <td class="code"><pre>&#39;django.core.files.storage.FileSystemStorage&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_FROM_EMAIL</td>
+          <td class="code"><pre>&#39;webmaster@localhost&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_INDEX_TABLESPACE</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_TABLESPACE</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DISALLOWED_USER_AGENTS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_BACKEND</td>
+          <td class="code"><pre>&#39;django.core.mail.backends.smtp.EmailBackend&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST</td>
+          <td class="code"><pre>&#39;localhost&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST_PASSWORD</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST_USER</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_PORT</td>
+          <td class="code"><pre>25</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_SSL_CERTFILE</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_SSL_KEYFILE</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_SUBJECT_PREFIX</td>
+          <td class="code"><pre>&#39;[Django] &#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_TIMEOUT</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_USE_LOCALTIME</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_USE_SSL</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_USE_TLS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_CHARSET</td>
+          <td class="code"><pre>&#39;utf-8&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_DIRECTORY_PERMISSIONS</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_HANDLERS</td>
+          <td class="code"><pre>[&#39;django.core.files.uploadhandler.MemoryFileUploadHandler&#39;,
+ &#39;django.core.files.uploadhandler.TemporaryFileUploadHandler&#39;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_MAX_MEMORY_SIZE</td>
+          <td class="code"><pre>2621440</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_PERMISSIONS</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_TEMP_DIR</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FIRST_DAY_OF_WEEK</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FIXTURE_DIRS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FORCE_SCRIPT_NAME</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FORMAT_MODULE_PATH</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FORM_RENDERER</td>
+          <td class="code"><pre>&#39;django.forms.renderers.DjangoTemplates&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>IGNORABLE_404_URLS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>INSTALLED_APPS</td>
+          <td class="code"><pre>[&#39;django.contrib.admin&#39;,
+ &#39;django.contrib.auth&#39;,
+ &#39;django.contrib.contenttypes&#39;,
+ &#39;django.contrib.sessions&#39;,
+ &#39;django.contrib.messages&#39;,
+ &#39;django.contrib.staticfiles&#39;,
+ &#39;farmers&#39;,
+ &#39;admn&#39;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>INTERNAL_IPS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGES</td>
+          <td class="code"><pre>[(&#39;af&#39;, &#39;Afrikaans&#39;),
+ (&#39;ar&#39;, &#39;Arabic&#39;),
+ (&#39;ast&#39;, &#39;Asturian&#39;),
+ (&#39;az&#39;, &#39;Azerbaijani&#39;),
+ (&#39;bg&#39;, &#39;Bulgarian&#39;),
+ (&#39;be&#39;, &#39;Belarusian&#39;),
+ (&#39;bn&#39;, &#39;Bengali&#39;),
+ (&#39;br&#39;, &#39;Breton&#39;),
+ (&#39;bs&#39;, &#39;Bosnian&#39;),
+ (&#39;ca&#39;, &#39;Catalan&#39;),
+ (&#39;cs&#39;, &#39;Czech&#39;),
+ (&#39;cy&#39;, &#39;Welsh&#39;),
+ (&#39;da&#39;, &#39;Danish&#39;),
+ (&#39;de&#39;, &#39;German&#39;),
+ (&#39;dsb&#39;, &#39;Lower Sorbian&#39;),
+ (&#39;el&#39;, &#39;Greek&#39;),
+ (&#39;en&#39;, &#39;English&#39;),
+ (&#39;en-au&#39;, &#39;Australian English&#39;),
+ (&#39;en-gb&#39;, &#39;British English&#39;),
+ (&#39;eo&#39;, &#39;Esperanto&#39;),
+ (&#39;es&#39;, &#39;Spanish&#39;),
+ (&#39;es-ar&#39;, &#39;Argentinian Spanish&#39;),
+ (&#39;es-co&#39;, &#39;Colombian Spanish&#39;),
+ (&#39;es-mx&#39;, &#39;Mexican Spanish&#39;),
+ (&#39;es-ni&#39;, &#39;Nicaraguan Spanish&#39;),
+ (&#39;es-ve&#39;, &#39;Venezuelan Spanish&#39;),
+ (&#39;et&#39;, &#39;Estonian&#39;),
+ (&#39;eu&#39;, &#39;Basque&#39;),
+ (&#39;fa&#39;, &#39;Persian&#39;),
+ (&#39;fi&#39;, &#39;Finnish&#39;),
+ (&#39;fr&#39;, &#39;French&#39;),
+ (&#39;fy&#39;, &#39;Frisian&#39;),
+ (&#39;ga&#39;, &#39;Irish&#39;),
+ (&#39;gd&#39;, &#39;Scottish Gaelic&#39;),
+ (&#39;gl&#39;, &#39;Galician&#39;),
+ (&#39;he&#39;, &#39;Hebrew&#39;),
+ (&#39;hi&#39;, &#39;Hindi&#39;),
+ (&#39;hr&#39;, &#39;Croatian&#39;),
+ (&#39;hsb&#39;, &#39;Upper Sorbian&#39;),
+ (&#39;hu&#39;, &#39;Hungarian&#39;),
+ (&#39;hy&#39;, &#39;Armenian&#39;),
+ (&#39;ia&#39;, &#39;Interlingua&#39;),
+ (&#39;id&#39;, &#39;Indonesian&#39;),
+ (&#39;io&#39;, &#39;Ido&#39;),
+ (&#39;is&#39;, &#39;Icelandic&#39;),
+ (&#39;it&#39;, &#39;Italian&#39;),
+ (&#39;ja&#39;, &#39;Japanese&#39;),
+ (&#39;ka&#39;, &#39;Georgian&#39;),
+ (&#39;kab&#39;, &#39;Kabyle&#39;),
+ (&#39;kk&#39;, &#39;Kazakh&#39;),
+ (&#39;km&#39;, &#39;Khmer&#39;),
+ (&#39;kn&#39;, &#39;Kannada&#39;),
+ (&#39;ko&#39;, &#39;Korean&#39;),
+ (&#39;lb&#39;, &#39;Luxembourgish&#39;),
+ (&#39;lt&#39;, &#39;Lithuanian&#39;),
+ (&#39;lv&#39;, &#39;Latvian&#39;),
+ (&#39;mk&#39;, &#39;Macedonian&#39;),
+ (&#39;ml&#39;, &#39;Malayalam&#39;),
+ (&#39;mn&#39;, &#39;Mongolian&#39;),
+ (&#39;mr&#39;, &#39;Marathi&#39;),
+ (&#39;my&#39;, &#39;Burmese&#39;),
+ (&#39;nb&#39;, &#39;Norwegian Bokmål&#39;),
+ (&#39;ne&#39;, &#39;Nepali&#39;),
+ (&#39;nl&#39;, &#39;Dutch&#39;),
+ (&#39;nn&#39;, &#39;Norwegian Nynorsk&#39;),
+ (&#39;os&#39;, &#39;Ossetic&#39;),
+ (&#39;pa&#39;, &#39;Punjabi&#39;),
+ (&#39;pl&#39;, &#39;Polish&#39;),
+ (&#39;pt&#39;, &#39;Portuguese&#39;),
+ (&#39;pt-br&#39;, &#39;Brazilian Portuguese&#39;),
+ (&#39;ro&#39;, &#39;Romanian&#39;),
+ (&#39;ru&#39;, &#39;Russian&#39;),
+ (&#39;sk&#39;, &#39;Slovak&#39;),
+ (&#39;sl&#39;, &#39;Slovenian&#39;),
+ (&#39;sq&#39;, &#39;Albanian&#39;),
+ (&#39;sr&#39;, &#39;Serbian&#39;),
+ (&#39;sr-latn&#39;, &#39;Serbian Latin&#39;),
+ (&#39;sv&#39;, &#39;Swedish&#39;),
+ (&#39;sw&#39;, &#39;Swahili&#39;),
+ (&#39;ta&#39;, &#39;Tamil&#39;),
+ (&#39;te&#39;, &#39;Telugu&#39;),
+ (&#39;th&#39;, &#39;Thai&#39;),
+ (&#39;tr&#39;, &#39;Turkish&#39;),
+ (&#39;tt&#39;, &#39;Tatar&#39;),
+ (&#39;udm&#39;, &#39;Udmurt&#39;),
+ (&#39;uk&#39;, &#39;Ukrainian&#39;),
+ (&#39;ur&#39;, &#39;Urdu&#39;),
+ (&#39;vi&#39;, &#39;Vietnamese&#39;),
+ (&#39;zh-hans&#39;, &#39;Simplified Chinese&#39;),
+ (&#39;zh-hant&#39;, &#39;Traditional Chinese&#39;)]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGES_BIDI</td>
+          <td class="code"><pre>[&#39;he&#39;, &#39;ar&#39;, &#39;fa&#39;, &#39;ur&#39;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_CODE</td>
+          <td class="code"><pre>&#39;en-us&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_AGE</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_DOMAIN</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_NAME</td>
+          <td class="code"><pre>&#39;django_language&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_PATH</td>
+          <td class="code"><pre>&#39;/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOCALE_PATHS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGGING</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGGING_CONFIG</td>
+          <td class="code"><pre>&#39;logging.config.dictConfig&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGIN_REDIRECT_URL</td>
+          <td class="code"><pre>&#39;/accounts/profile/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGIN_URL</td>
+          <td class="code"><pre>&#39;/accounts/login/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGOUT_REDIRECT_URL</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MANAGERS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MEDIA_ROOT</td>
+          <td class="code"><pre>&#39;C:\\Desktop\\MINI PRPOJECT WORK\\MINI PROJECT\\code\\media&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MEDIA_URL</td>
+          <td class="code"><pre>&#39;/media/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MESSAGE_STORAGE</td>
+          <td class="code"><pre>&#39;django.contrib.messages.storage.fallback.FallbackStorage&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MIDDLEWARE</td>
+          <td class="code"><pre>[&#39;django.middleware.security.SecurityMiddleware&#39;,
+ &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+ &#39;django.middleware.common.CommonMiddleware&#39;,
+ &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+ &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+ &#39;django.contrib.messages.middleware.MessageMiddleware&#39;,
+ &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MIGRATION_MODULES</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MONTH_DAY_FORMAT</td>
+          <td class="code"><pre>&#39;F j&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>NUMBER_GROUPING</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PASSWORD_HASHERS</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PASSWORD_RESET_TIMEOUT_DAYS</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PREPEND_WWW</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ROOT_URLCONF</td>
+          <td class="code"><pre>&#39;agricultural.urls&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECRET_KEY</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_BROWSER_XSS_FILTER</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_CONTENT_TYPE_NOSNIFF</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_HSTS_INCLUDE_SUBDOMAINS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_HSTS_PRELOAD</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_HSTS_SECONDS</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_PROXY_SSL_HEADER</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_REDIRECT_EXEMPT</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_SSL_HOST</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_SSL_REDIRECT</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_EMAIL</td>
+          <td class="code"><pre>&#39;root@localhost&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_CACHE_ALIAS</td>
+          <td class="code"><pre>&#39;default&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_AGE</td>
+          <td class="code"><pre>1209600</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_DOMAIN</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_HTTPONLY</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_NAME</td>
+          <td class="code"><pre>&#39;sessionid&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_PATH</td>
+          <td class="code"><pre>&#39;/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_SAMESITE</td>
+          <td class="code"><pre>&#39;Lax&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_SECURE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_ENGINE</td>
+          <td class="code"><pre>&#39;django.contrib.sessions.backends.db&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_EXPIRE_AT_BROWSER_CLOSE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_FILE_PATH</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_SAVE_EVERY_REQUEST</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_SERIALIZER</td>
+          <td class="code"><pre>&#39;django.contrib.sessions.serializers.JSONSerializer&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SETTINGS_MODULE</td>
+          <td class="code"><pre>&#39;agricultural.settings&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHORT_DATETIME_FORMAT</td>
+          <td class="code"><pre>&#39;m/d/Y P&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHORT_DATE_FORMAT</td>
+          <td class="code"><pre>&#39;m/d/Y&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SIGNING_BACKEND</td>
+          <td class="code"><pre>&#39;django.core.signing.TimestampSigner&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SILENCED_SYSTEM_CHECKS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_DIRS</td>
+          <td class="code"><pre>[&#39;C:\\Desktop\\MINI PRPOJECT WORK\\MINI PROJECT\\code\\assets/static&#39;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_FINDERS</td>
+          <td class="code"><pre>[&#39;django.contrib.staticfiles.finders.FileSystemFinder&#39;,
+ &#39;django.contrib.staticfiles.finders.AppDirectoriesFinder&#39;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_STORAGE</td>
+          <td class="code"><pre>&#39;django.contrib.staticfiles.storage.StaticFilesStorage&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATIC_ROOT</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATIC_URL</td>
+          <td class="code"><pre>&#39;/static/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEMPLATES</td>
+          <td class="code"><pre>[{&#39;APP_DIRS&#39;: True,
+  &#39;BACKEND&#39;: &#39;django.template.backends.django.DjangoTemplates&#39;,
+  &#39;DIRS&#39;: [&#39;C:\\Desktop\\MINI PRPOJECT WORK\\MINI &#39;
+           &#39;PROJECT\\code\\assets/templates&#39;],
+  &#39;OPTIONS&#39;: {&#39;context_processors&#39;: [&#39;django.template.context_processors.debug&#39;,
+                                     &#39;django.template.context_processors.request&#39;,
+                                     &#39;django.contrib.auth.context_processors.auth&#39;,
+                                     &#39;django.contrib.messages.context_processors.messages&#39;]}}]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEST_NON_SERIALIZED_APPS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEST_RUNNER</td>
+          <td class="code"><pre>&#39;django.test.runner.DiscoverRunner&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>THOUSAND_SEPARATOR</td>
+          <td class="code"><pre>&#39;,&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_FORMAT</td>
+          <td class="code"><pre>&#39;P&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_INPUT_FORMATS</td>
+          <td class="code"><pre>[&#39;%H:%M:%S&#39;, &#39;%H:%M:%S.%f&#39;, &#39;%H:%M&#39;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_ZONE</td>
+          <td class="code"><pre>&#39;UTC&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_I18N</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_L10N</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_THOUSAND_SEPARATOR</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_TZ</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_X_FORWARDED_HOST</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_X_FORWARDED_PORT</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>WSGI_APPLICATION</td>
+          <td class="code"><pre>&#39;agricultural.wsgi.application&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>X_FRAME_OPTIONS</td>
+          <td class="code"><pre>&#39;SAMEORIGIN&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>YEAR_MONTH_FORMAT</td>
+          <td class="code"><pre>&#39;F Y&#39;</pre></td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+</div>
+
+  <div id="explanation">
+    <p>
+      You're seeing this error because you have <code>DEBUG = True</code> in your
+      Django settings file. Change that to <code>False</code>, and Django will
+      display a standard page generated by the handler for this status code.
+    </p>
+  </div>
+
+</body>
+</html>

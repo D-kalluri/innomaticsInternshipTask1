@@ -1,0 +1,1848 @@
+var month, day, year;
+var n;
+var isNav4;
+var isNav5;
+var strSeperator = "/";
+var vYearType = 4; //Set to 2 or 4 for number of digits in the year for Netscape
+var vYearLength = 2; //Set to 4 if you want to force the user to enter 4 digitsfor the year before validating.
+var err = 0; // Set the error code to a default of zero
+
+function trim(inputString) {
+    // Removes leading and trailing spaces from the passed string. Also removes
+    // consecutive spaces and replaces it with one space. If something besides
+    // a string is passed in (null, custom object, etc.) then return the input.
+    if (typeof inputString != "string") {
+        return inputString;
+    }
+    var retValue = inputString;
+    var ch = retValue.substring(0, 1);
+    while (ch === " ") { // Check for spaces at the beginning of the string
+        retValue = retValue.substring(1, retValue.length);
+        ch = retValue.substring(0, 1);
+    }
+    ch = retValue.substring(retValue.length - 1, retValue.length);
+    while (ch === " ") { // Check for spaces at the end of the string
+        retValue = retValue.substring(0, retValue.length - 1);
+        ch = retValue.substring(retValue.length - 1, retValue.length);
+    }
+    while (retValue.indexOf("  ") != -1) { // Note that there are two spaces in the string - look for multiple spaces within the string
+        retValue = retValue.substring(0, retValue.indexOf("  ")) + retValue.substring(retValue.indexOf("  ") + 1, retValue.length); // Again, there are two spaces in each of the strings
+    }
+    return retValue; // Return the trimmed string back to the user
+}
+
+
+function dateValid1(objName)
+{
+    var strDate;
+    var strDateArray;
+    var strDay;
+    var strMonth;
+    var strYear;
+    var intday;
+    var intMonth;
+    var intYear;
+    var booFound = false;
+    var datefield = objName;
+
+    var strSeparatorArray = new Array("-", " ", "/", ".");
+    var intElementNr;
+
+    var strMonthArray = new Array(12);
+    strMonthArray[0] = "Jan";
+    strMonthArray[1] = "Feb";
+    strMonthArray[2] = "Mar";
+    strMonthArray[3] = "Apr";
+    strMonthArray[4] = "May";
+    strMonthArray[5] = "Jun";
+    strMonthArray[6] = "Jul";
+    strMonthArray[7] = "Aug";
+    strMonthArray[8] = "Sep";
+    strMonthArray[9] = "Oct";
+    strMonthArray[10] = "Nov";
+    strMonthArray[11] = "Dec";
+
+    strDate = objName;
+
+    if (strDate.length < 1)
+    {
+        return false;
+    }
+
+    for (intElementNr = 0; intElementNr < strSeparatorArray.length; intElementNr++)
+    {
+        if (strDate.indexOf(strSeparatorArray[intElementNr]) != -1)
+        {
+            strDateArray = strDate.split(strSeparatorArray[intElementNr]);
+            if (strDateArray.length != 3)
+            {
+                err = 1;
+                return false;
+            } else
+            {
+                strDay = strDateArray[0];
+                strMonth = strDateArray[1];
+                strYear = strDateArray[2];
+            }
+            booFound = true;
+        }
+    }
+    if (booFound === false)
+    {
+        if (strDate.length > 5)
+        {
+            strDay = strDate.substr(0, 2);
+            strMonth = strDate.substr(2, 2);
+            strYear = strDate.substr(4);
+        }
+    }
+
+//Adjustment for short years entered
+
+    if (strYear.length === 2)
+    {
+        strYear = '20' + strYear;
+    }
+
+    strTemp = strDay;
+    strDay = strMonth;
+    strMonth = strTemp;
+    intday = parseInt(strDay, 10);
+
+    if (isNaN(intday))
+    {
+        err = 2;
+        return false;
+    }
+
+    intMonth = parseInt(strMonth, 10);
+
+    if (isNaN(intMonth))
+    {
+        for (i = 0; i < 12; i++)
+        {
+            if (strMonth.toUpperCase() === strMonthArray[i].toUpperCase())
+            {
+                intMonth = i + 1;
+                strMonth = strMonthArray[i];
+                i = 12;
+            }
+        }
+
+        if (isNaN(intMonth))
+        {
+            err = 3;
+            return false;
+        }
+    }
+
+    intYear = parseInt(strYear, 10);
+    if (isNaN(intYear))
+    {
+        err = 4;
+        return false;
+    }
+
+    if (intMonth > 12 || intMonth < 1)
+    {
+        err = 5;
+        return false;
+    }
+
+    if ((intMonth === 1 || intMonth === 3 || intMonth === 5 || intMonth === 7 || intMonth === 8 || intMonth === 10 || intMonth === 12) && (intday > 31 || intday < 1))
+    {
+        err = 6;
+        return false;
+    }
+
+    if ((intMonth === 4 || intMonth === 6 || intMonth === 9 || intMonth === 11) && (intday > 30 || intday < 1))
+    {
+        err = 7;
+        return false;
+    }
+
+    if (intMonth === 2)
+    {
+        if (intday < 1)
+        {
+            err = 8;
+            return false;
+        }
+
+        if (LeapYear(intYear) === true)
+        {
+            if (intday > 29)
+            {
+                err = 9;
+                return false;
+            }
+        } else
+        {
+            if (intday > 28)
+            {
+                err = 10;
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+////// Main function to call ////////////
+function Check_Date(vDateName, vDateValue, e, dateCheck, dateType) {
+    change_date_format(vDateName);
+    vDateType = dateType;
+    vDateValue = vDateName.value;
+    var whichCode = (window.Event) ? e.which : e.keyCode;
+    var alphaCheck = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/-";
+
+    if (isNaN(vDateValue.substr(6, 4)))
+    {
+        return false;
+    }
+
+    if ((vDateValue.substr(2, 1) != "/") || (vDateValue.substr(5, 1) != "/"))
+    {
+        return false;
+    }
+    if (alphaCheck.indexOf(vDateValue) >= 1)
+    {
+        vDateName.value = vDateName.value.substr(0, (vDateValue.length - 1));
+        return false;
+    }
+
+    if (whichCode === 8) //Ignore the Netscape value for backspace. IE has no value
+        return false;
+    else
+    {
+        var strCheck = '47,48,49,50,51,52,53,54,55,56,57,58,59,95,96,97,98,99,100,101,102,103,104,105';
+        if (strCheck.indexOf(whichCode) != -1)
+        {
+            if (isNav4)
+            {
+                if (((vDateValue.length < 6 && dateCheck) || (vDateValue.length === 7 && dateCheck)) && (vDateValue.length >= 1))
+                {
+                    return false;
+                }
+                if (vDateValue.length === 6 && dateCheck)
+                {
+                    var mDay = vDateName.value.substr(2, 2);
+                    var mMonth = vDateName.value.substr(0, 2);
+                    var mYear = vDateName.value.substr(4, 4)
+
+                    if (mYear.length === 2 && vYearType === 4)
+                    {
+                        var mToday = new Date();
+
+                        //If the year is greater than 30 years from now use 19, otherwise use 20
+
+                        var checkYear = mToday.getFullYear() + 30;
+                        var mCheckYear = '20' + mYear;
+
+                        if (mCheckYear >= checkYear)
+                            mYear = '19' + mYear;
+                        else
+                            mYear = '20' + mYear;
+                    }
+
+                    var vDateValueCheck = mMonth + strSeperator + mDay + strSeperator + mYear;
+
+                    if (!dateValid1(vDateValueCheck))
+                    {
+                        return false;
+                    }
+                } else
+                {
+                    // Reformat the date for validation and set date type to a 1
+
+                    if (vDateValue.length >= 8 && dateCheck)
+                    {
+
+                        if (vDateType === 3) // ddmmyyyy
+                        {
+                            var mMonth = vDateName.value.substr(2, 2);
+                            var mDay = vDateName.value.substr(0, 2);
+                            var mYear = vDateName.value.substr(4, 4);
+                            vDateName.value = mDay + strSeperator + mMonth + strSeperator + mYear;
+                        }
+
+
+                        var vDateTypeTemp = vDateType;
+                        vDateType = 1;
+                        var vDateValueCheck = mMonth + strSeperator + mDay + strSeperator + mYear;
+
+                        if (!dateValid1(vDateValueCheck))
+                        {
+                            //alert("Invalid Date\nPlease Re-Enter")
+                            vDateType = vDateTypeTemp;
+                            return false;
+                        }
+                        vDateType = vDateTypeTemp;
+                        return true;
+                    } else
+                    {
+                        if (((vDateValue.length < 8 && dateCheck) || (vDateValue.length === 9 && dateCheck)) && (vDateValue.length >= 1))
+                        {
+                            //alert("Invalid Date\nPlease Re-Enter")
+                            return false;
+                        }
+                    }
+                }
+            } else
+            {
+
+                if (((vDateValue.length < 8 && dateCheck) || (vDateValue.length === 9 && dateCheck)) && (vDateValue.length >= 1))
+                {
+                    //alert("Invalid Date\nPlease Re-Enter")
+                    return false;
+                }
+                if (vDateValue.length >= 8 && dateCheck)
+                {
+                    if (vDateType === 3) // dd/mm/yyyy
+                    {
+                        var mDay = vDateName.value.substr(0, 2);
+                        var mMonth = vDateName.value.substr(3, 2);
+                        var mYear = vDateName.value.substr(6, 4);
+                    }
+
+                    if (vYearLength === 4)
+                        if (mYear.length < 4)
+                        {
+                            //alert("Invalid Date\nPlease Re-Enter");
+
+                            return false;
+                        }
+
+
+                    var vDateTypeTemp = vDateType;
+
+// Change vDateType to a 1 for standard date format for validation
+// Type will be changed back when validation is completed.
+
+
+// Store reformatted date to new variable for validation.
+
+                    var vDateValueCheck = mMonth + strSeperator + mDay + strSeperator + mYear;
+                    if (!dateValid1(vDateValueCheck))
+                    {
+                        //  alert("Invalid Date\nPlease Re-Enter")
+                        vDateType = vDateTypeTemp;
+                        return false;
+                    }
+                    var startdate = new Date();
+                    var myears = 1900;
+                    month = vDateName.value.substring(3, 5);
+                    day = vDateName.value.substring(0, 2);
+                    year = vDateName.value.substring(6, 10);
+
+                    if (mYear < myears)
+                    {
+                        //alert("Invalid Date\nPlease Re-Enter")
+                        return true;
+                    } else
+                    {
+                        if (priordate(mYear, mMonth, mDay))
+                        {
+                            //alert("Entered Date is greater than current date\nPlease Re-Enter")
+                            return true;
+                        }
+                    }
+
+
+
+
+                    if (mYear.length === 2 && vYearType === 4 && dateCheck) {
+//Turn a two digit year into a 4 digit year
+                        var mToday = new Date();
+//If the year is greater than 30 years from now use 19, otherwise use 20
+                        var checkYear = mToday.getFullYear() + 30;
+                        var mCheckYear = '20' + mYear;
+                        if (mCheckYear >= checkYear)
+                            mYear = '19' + mYear;
+                        else
+                            mYear = '20' + mYear;
+                        vDateValueCheck = mMonth + strSeperator + mDay + strSeperator + mYear;
+
+
+                        if (vDateTypeTemp === 3) // dd/mm/yyyy
+                            vDateName.value = mDay + strSeperator + mMonth + strSeperator + mYear;
+                    }
+                    if (!dateValid1(vDateValueCheck))
+                    {
+                        //alert("Invalid Date\nPlease Re-Enter")
+                        vDateType = vDateTypeTemp;
+                        return false;
+                    }
+                    vDateType = vDateTypeTemp;
+                    return true;
+                } else {
+                    if (vDateType === 1) {
+                        if (vDateValue.length === 2) {
+                            vDateName.value = vDateValue + strSeperator;
+                        }
+                        if (vDateValue.length === 5) {
+                            vDateName.value = vDateValue + strSeperator;
+                        }
+                    }
+                    if (vDateType === 2) {
+                        if (vDateValue.length === 4) {
+                            vDateName.value = vDateValue + strSeperator;
+                        }
+                        if (vDateValue.length === 7) {
+                            vDateName.value = vDateValue + strSeperator;
+                        }
+                    }
+                    if (vDateType === 3) {
+                        if (vDateValue.length === 2) {
+
+                            vDateName.value = vDateValue + strSeperator;
+                        }
+                        if (vDateValue.length === 5) {
+                            vDateName.value = vDateValue + strSeperator;
+                        }
+                    }
+                    return true;
+                }
+            }
+
+            if (vDateValue.length === 10 && dateCheck) {
+                if (!dateValid1(vDateName)) {
+// Un-comment the next line of code for debugging the dateValid() function error
+//alert(err);
+                    //alert("Invalid Date Please Re-Enter")
+                    vDateName.select();
+                    return false;
+                   
+                }
+            }
+            vDateName.focus();
+            return false;
+        } else {
+// If the value is not in the string return the string minus the last
+// key entered.
+            if (isNav4) {
+                vDateName.select();
+                return false;
+            } else
+            {
+                vDateName.value = vDateName.value.substr(0, (vDateValue.length - 1));
+                vDateName.focus();
+                return false;
+            }
+        }
+    }
+}
+
+
+function priordate(mYear, mMonth, mDay)
+{
+    tdate = new Date();
+    if (mYear < tdate.getYear())
+        return false;
+
+    if (mYear > tdate.getYear())
+        return true;
+
+    if (mMonth < (tdate.getMonth() + 1))
+        return false;
+
+    if (mMonth > (tdate.getMonth() + 1))
+        return true;
+
+    if (mDay <= tdate.getDate())
+        return false;
+
+    if (mDay > tdate.getDate())
+        return true;
+
+//alert("Date Could not be Checked")
+    return true;
+}
+
+function LeapYear(intYear)
+{
+    if (intYear % 100 === 0)
+    {
+        if (intYear % 400 === 0)
+        {
+            return true;
+        }
+    } else
+    {
+        if ((intYear % 4) === 0)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+function isBlank(s)
+{
+    var len = s.length;
+    var i;
+    for (i = 0; i < len; ++i)
+    {
+        if (s.charAt(i) != " ")
+            return false;
+    }
+    return true;
+}
+
+function locate(fval)
+{
+    if (isBlank(fval))
+        alert("Enter Date !!!");
+    else
+        location.replace('http://localhost:8080/servlet/fci_creport?da_var=' + fval + '');
+}
+
+function locate1(fval1, fval2)
+{
+    if (isBlank(fval1))
+        alert("Enter Date !!!");
+    else
+        location.replace('http://localhost:8080/servlet/fci_dreport?da_var=' + fval1 + '&di_var=' + fval2 + '');
+}
+
+function get_no_of_days(day, month, year)
+{
+    var days = 0, leapyear = false;
+    if (month === 1)
+    {
+        if (year % 4 === 0)
+        {
+            leapyear = true;
+            if (year % 100 === 0)
+                if (year % 400 != 0)
+                {
+                    leapyear = false;
+                }
+        }
+        // alert(leapyear);
+        if (leapyear === true)
+        {
+            days = ((day === 1) ? 29 : 29 - (day - 1));
+            // alert(days);
+            return days;
+        } else
+        {
+            days = ((day === 1) ? 28 : 28 - (day - 1));
+            //alert(days);
+            return days;
+        }
+    }
+    if (month === 0) {
+        days = ((day === 1) ? 31 : 31 - (day - 1));
+    } else
+    if (month === 2) {
+        days = ((day === 1) ? 31 : 31 - (day - 1));
+    } else
+    if (month === 3) {
+        days = ((day === 1) ? 30 : 30 - (day - 1));
+    } else
+    if (month === 4) {
+        days = ((day === 1) ? 31 : 31 - (day - 1));
+    } else
+    if (month === 5) {
+        days = ((day === 1) ? 30 : 30 - (day - 1));
+    } else
+    if (month === 6) {
+        days = ((day === 1) ? 31 : 31 - (day - 1));
+    } else
+    if (month === 7) {
+        days = ((day === 1) ? 31 : 31 - (day - 1));
+    } else
+    if (month === 8) {
+        days = ((day === 1) ? 30 : 30 - (day - 1));
+    } else
+    if (month === 9) {
+        days = ((day === 1) ? 31 : 31 - (day - 1));
+    } else
+    if (month === 10) {
+        days = ((day === 1) ? 30 : 30 - (day - 1));
+    } else
+    if (month === 11) {
+        days = ((day === 1) ? 31 : 31 - (day - 1));
+    }
+    return days;
+}
+
+function Date_Diff(date1, date2)
+{
+    var day1, day2, month1, month2, year1, year2, days = 0;
+    if (Check_Date(date1, date1.value, event, true, '3'))
+    {
+        day1 = day;
+        month1 = month;
+        year1 = year;
+    } else
+    {
+        //alert("Invalid date format ");
+        return;
+    }
+    if (Check_Date(date2, date2.value, event, true, '3'))
+    {
+        day2 = day;
+        month2 = month;
+        year2 = year;
+    } else
+    {
+        //alert("Invalid date format ");                          
+        return;
+    }
+    D1 = new Date();
+    D1.setDate(day1);
+    D1.setMonth(month1 - 1);
+    D1.setYear(year1);
+    D2 = new Date();
+    D2.setDate(day2);
+    D2.setMonth(month2 - 1);
+    D2.setYear(year2);
+    if (D1 > D2)
+    {
+        for (var i = year2; i <= year1; i++)
+        {
+            dd1 = new Date();
+            dd2 = new Date();
+
+            dd1.setDate((i === year2 ? day2 : 1));
+            dd1.setMonth((i === year2 ? month2 - 1 : 0));
+            dd1.setYear((i === year2 ? year2 : i));
+            dd2.setDate((i === year1 ? day1 : 31));
+            dd2.setMonth((i === year1 ? month1 - 1 : 11));
+            dd2.setYear(i);
+            if (i != year2)
+            {
+                for (var j = dd1.getMonth(); j <= dd2.getMonth(); j++)
+                {
+                    dd1.setDate((i === year1 && j === eval(month1 - 1)) ? day1 : 1);
+                    days += get_no_of_days(dd1.getDate(), j, dd1.getYear());
+                }
+            } else
+            {
+                for (var j = dd1.getMonth(); j < dd2.getMonth(); j++)
+                {
+                    dd1.setDate((i === year1 && j === eval(month1 - 1)) ? day1 : 1);
+                    days += get_no_of_days(dd1.getDate(), j, dd1.getYear());
+                }
+                if (dd1.getMonth() != dd2.getMonth())
+                    days += eval(day2);
+                else
+                    days += dd2.getDate() - dd1.getDate() + 1;
+                //alert(day2);
+            }
+        }
+    } else
+    {
+        for (var i = year1; i <= year2; i++)
+        {
+            dd1 = new Date();
+            dd2 = new Date();
+
+            dd1.setMonth((i === year1 ? month1 - 1 : 0));
+            dd1.setYear((i === year1 ? year1 : i));
+            dd2.setDate((i === year2 ? day2 : 31));
+            dd2.setMonth((i === year2 ? month2 - 1 : 11));
+            dd2.setYear(i);
+            dd1.setDate(i === year1 ? day1 : 1);
+            if (i != year2)
+            {
+                for (var j = dd1.getMonth(); j <= dd2.getMonth(); j++)
+                {
+                    dd1.setDate((i === year1 && j === eval(month1 - 1)) ? day1 : 1);
+                    days += get_no_of_days(dd1.getDate(), j, dd1.getYear());
+                }
+            } else
+            {
+                for (var j = dd1.getMonth(); j < dd2.getMonth(); j++)
+                {
+                    dd1.setDate((i === year1 && j === eval(month1 - 1)) ? day1 : 1);
+                    days += get_no_of_days(dd1.getDate(), j, dd1.getYear());
+                }
+                if (dd1.getMonth() != dd2.getMonth())
+                    days += eval(day2);
+                else
+                    days += dd2.getDate() - dd1.getDate() + 1;
+                //alert(day2);
+            }
+        }
+    }
+    return days;
+}
+
+function change_date_format(obj)
+{
+    var first_sep = obj.value.indexOf("/", 0);
+    var second_sep = obj.value.indexOf("/", first_sep + 1);
+    var first1_sep = obj.value.indexOf("-", 0);
+    var second1_sep = obj.value.indexOf("-", first1_sep + 1);
+    if (first_sep != -1 && second_sep != -1)
+    {
+        var d = obj.value.substring(0, first_sep);
+        var m = obj.value.substring(first_sep + 1, second_sep);
+        if (d.length === 1)
+            d = "0" + d;
+        if (m.length === 1)
+            m = "0" + m;
+        obj.value = d + "/" + m + "/" + obj.value.substring(second_sep + 1);
+    } else if (first1_sep != -1 && second1_sep != -1)
+    {
+        var d = obj.value.substring(0, first1_sep);
+        var m = obj.value.substring(first1_sep + 1, second1_sep);
+        if (d.length === 1)
+            d = "0" + d;
+        if (m.length === 1)
+            m = "0" + m;
+        obj.value = d + "/" + m + "/" + obj.value.substring(second1_sep + 1);
+    }
+}
+
+function Compare(date1, date2)
+{
+    var day1, day2, month1, month2, year1, year2;
+    if (Check_Date(date1, date1.value, event, true, '3'))
+    {
+        day1 = day;
+        month1 = month;
+        year1 = year;
+    } else
+    {
+        //alert("Invalid date format ");
+        return;
+    }
+    if (Check_Date(date2, date2.value, event, true, '3'))
+    {
+        day2 = day;
+        month2 = month;
+        year2 = year;
+    } else
+    {
+        //alert("Invalid date format ");                           
+        return false;
+    }
+    D1 = new Date();
+    D1.setDate(day1);
+    D1.setMonth(month1 - 1);
+    D1.setYear(year1);
+    D2 = new Date();
+    D2.setDate(day2);
+    D2.setMonth(month2 - 1);
+    D2.setYear(year2);
+    if (D1 > D2)
+    {
+        return -1;
+    } else if (D1 === D2)
+    {
+        return 0;
+    } else
+        return 1;
+}
+
+function scompare(date1, date2)
+{
+    var day1, day2, month1, month2, year1, year2;
+    if (Check_Date(date1, date1.value, event, true, '3'))
+    {
+        day1 = day;
+        month1 = month;
+        year1 = year;
+    } else
+    {
+        //alert("Invalid date format ");
+        return;
+    }
+    if (Check_Date(date2, date2.value, event, true, '3'))
+    {
+        day2 = day;
+        month2 = month;
+        year2 = year;
+    } else
+    {
+        //alert("Invalid date format ");
+
+        return false;
+    }
+    D1 = new Date();
+    D1.setDate(day1);
+    D1.setMonth(month1 - 1);
+    D1.setYear(year1);
+    D2 = new Date();
+    D2.setDate(day2);
+    D2.setMonth(month2 - 1);
+    D2.setYear(year2);
+    if (D1 < D2)
+    {
+        return false;
+    }
+
+    return  true;
+
+}
+
+function ltrim(obj)
+{
+    var temp = obj, flag = false;
+    var temp1 = "";
+    for (var i = 0; i < temp.length; i++)
+    {
+        c = temp.substring(i, i + 1);
+        if (c === " " && !flag)
+            continue;
+        flag = true;
+        temp1 += c;
+    }
+    return temp1;
+}
+
+
+function Check_Number(obj)
+{
+    var temp = obj.value;
+
+    if (check_number(ltrim(temp)))
+        return true;
+    else
+        return false;
+}
+
+function Check_Number_Space(obj)
+{
+    var temp = obj.value;
+
+    if (check_number(ltrim(temp)) || temp === '')
+        return true;
+    else
+        return false;
+}
+
+function Check_Numeric(obj)
+{
+    var temp = obj.value;
+    var oblen = temp.length;
+    if (oblen === 0)
+        return false;
+
+    for (var i = 0; i < oblen; i++)
+    {
+        if (i != oblen - 3)
+        {
+            c = temp.substring(i, i + 1);
+            if (!(c >= "0" && c <= "9"))
+                return false;
+        }
+    }
+    return true;
+}
+
+function check_number(obj)
+{
+    if (obj.length === 0)
+        return false;
+    for (var i = 0; i < obj.length; i++)
+    {
+        c = obj.substring(i, i + 1);
+        if (!(c >= "0" && c <= "9"))
+            return false;
+    }
+    return true;
+}
+
+function Check_Pin(obj)
+{
+    var i = obj.value;
+    var j = ltrim(i);
+    if (j.length > 0)
+    {
+        if (j.length < 6)
+            return false;
+        if (!check_number(j))
+            return false;
+        else
+            return true;
+    }
+    return true;
+}
+
+
+function Check_Characters(obj)
+{
+    if (obj.value.length > 0)
+    {
+        for (var i = 0; i < obj.value.length; i++)
+        {
+            c = obj.value.substring(i, i + 1);
+            if (!((c >= "a" && c <= "z") || (c >= "A" && c <= "Z") || (c === " ") || (c === ".") || (c === "-")))
+                return false;
+        }
+    }
+    return true;
+}
+
+
+function Check_Null(obj)
+{
+    if (obj.value.length === 0)
+        return true;
+    else
+        return false;
+}
+
+function Check_Length(obj) {
+    if(obj.value.length != 12 ) {
+        return true;
+    }else 
+        return false;
+}
+
+function Check_Checked(obj1, obj2)
+{
+    if (obj1.checked === false && obj2.checked === false)
+        return false;
+    else
+        return true;
+}
+
+function Check_Alphanumeric(obj, objn, objs)
+{
+    if (obj.value.length === 0 || objn.length === 0 || objs.length === 0)
+        return false;
+
+    for (var i = 0; i < objn.length; i++)
+    {
+        c = objn.substring(i, i + 1);
+        if (!(c >= "0" && c <= "9"))
+            return false;
+    }
+    for (var i = 0; i < objs.length; i++)
+    {
+        c = objs.substring(i, i + 1);
+        if (!((c >= "a" && c <= "z") || (c >= "A" && c <= "Z")))
+            return false;
+    }
+    return true;
+}
+
+function Check_Alphaanumeric(obj)
+{
+    if (obj.value.length > 0)
+    {
+        for (var i = 0; i < obj.value.length; i++)
+        {
+            c = obj.value.substring(i, i + 1);
+            if (!((c >= "a" && c <= "z") || (c >= "A" && c <= "Z") || (c >= "0" && c <= "9") || (c === " ") || (c === ".") || (c === "-") || (c === "/")))
+                return false;
+        }
+    }
+    return true;
+}
+
+function Check_Addr(obj)
+{
+    if (obj.value.length > 0)
+    {
+        for (var i = 0; i < obj.value.length; i++)
+        {
+            c = obj.value.substring(i, i + 1);
+            if (!((c >= "a" && c <= "z") || (c >= "A" && c <= "Z") || (c >= "0" && c <= "9") || (c === " ") || (c === ".") || (c === "-") || (c === ",") || (c === "/")))
+                return false;
+        }
+    }
+    return true;
+}
+
+function Check_EmailId(obj)
+{
+    var vobj = trim(obj.value);
+    var vlen = vobj.length;
+    var vdotpos = vlen - (vobj.lastIndexOf('.', vlen - 1) + 1);
+    if (vobj.length < 1)
+        return false;
+    else if (vobj.indexOf('@', 0) === -1)
+        return false;
+    else if (vobj.indexOf('@', 0) < 1)
+        return false;
+    else if (vobj.indexOf('.', 0) === -1)
+        return false;
+    else if (eval(vdotpos) < 2 || eval(vdotpos) > 3)
+        return false;
+    else
+        return true;
+}
+
+function Check_Phone(obj)
+{
+    if (obj.value.length > 0)
+    {
+        for (var i = 0; i < obj.value.length; i++)
+        {
+            c = obj.value.substring(i, i + 1);
+            if (!((c >= "0" && c <= "9") || (c === "-")))
+                return false;
+        }
+    }
+    return true;
+}
+
+function Check_File(obj)
+{
+    if (obj.value.length > 0)
+    {
+        for (var i = 0; i < obj.value.length; i++)
+        {
+            c = obj.value.substring(i, i + 1);
+            if (!((c >= "a" && c <= "z") || (c >= "A" && c <= "Z") || (c >= "0" && c <= "9") || (c === "-") || (c === ".") || (c === "_") || (c === "/") || (c === ":")))
+                return false;
+        }
+    }
+    return true;
+}
+function isDate(dt, s)
+{
+    var flag = false;
+    var dtvals = dt.value.split("/");
+    if (dtvals.length != 3)
+    {
+        alert("Enter Valid " + s);
+        dt.focus();
+        return false;
+    }
+    for (var i = 0; i < dtvals.length; i++)
+        if (!numCheck(dtvals[i]) || dtvals[i] === "0" || dtvals[i] === "")
+        {
+            flag = true;
+        }
+    if (flag === false)
+    {
+        var day = parseInt(dtvals[0], 10);
+        var mon = parseInt(dtvals[1], 10);
+        var year = parseInt(dtvals[2], 10);
+
+        if (day < 1 || day > 31 || mon < 1 || mon > 12 || year < 1900 || year > 9999)
+        {
+            alert("Enter Valid " + s);
+            dt.focus();
+            return false;
+        }
+        if (mon === 4 || mon === 6 || mon === 9 || mon === 11)
+            if (day > 30)
+            {
+                alert("Enter Valid " + s);
+                dt.focus();
+                return false;
+            }
+        if (mon === 2)
+            if (year % 4 === 0 && year % 100 != 0 || year % 400 === 0)
+            {
+                if (day > 29)
+                {
+                    alert("Enter Valid " + s);
+                    dt.focus();
+                    return false;
+                }
+            } else
+            if (day > 28)
+            {
+                alert("Enter Valid " + s);
+                dt.focus();
+                return false;
+            }
+
+    } else
+    if (flag === true)
+    {
+        alert("Enter Valid " + s);
+        dt.focus();
+        return false;
+    }
+    return true;
+}
+
+function numCheck(nm) {
+    for (var i = 0; i < nm.length; i++)
+        if (isNaN(nm.substring(i, i + 1)) || nm.substring(i, i + 1) === " ")
+            return false;
+    return true;
+}
+
+//--------------------------------------------kranthi---------------------------------
+function limitText(limitField, limitNum) {
+    if (limitField.value.length > limitNum) {
+        limitField.value = limitField.value.substring(0, limitNum);
+    }
+}
+
+function isSpaceKey(evt)
+{
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+    if ( (charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 123) && charCode != 32 && charCode != 8)
+    {
+        alert("Enter Alphabetic Values");
+        return false;
+    }
+    return true;
+}
+function NumericsOnly(evt)
+{
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+    if ((charCode > 31 && (charCode < 48 || charCode > 57)))
+    {
+        alert("Enter Numbers");
+        return false;
+    }
+    return true;
+}
+
+function validMobilenumber(obj) {
+    var value = obj.value;
+    var sub = value.substring(0, 1);
+    if (sub === "7" || sub === "8" || sub === "9") {
+
+    } else {
+        alert("Please enter a valid mobile number");
+        obj.focus();
+        return false;
+    }
+    return true;
+}
+
+function validateFreeSpace(value, obj, message)
+{
+    var user_name = value;
+    if (user_name === '')
+    {
+        alert(message);
+       
+        obj.focus();
+        return false;
+    }
+    return true;
+}
+
+function clear_form_elements(ele) {
+
+    tags = ele.getElementsByTagName('input');
+    for (i = 0; i < tags.length; i++) {
+        switch (tags[i].type) {
+            case 'password':
+            case 'text':
+                tags[i].value = '';
+                break;
+            case 'checkbox':
+            case 'radio':
+                tags[i].checked = false;
+                break;
+        }
+    }
+
+    tags = ele.getElementsByTagName('textarea');
+    for (i = 0; i < tags.length; i++) {
+        tags[i].value = '';
+    }
+
+
+    tags = ele.getElementsByTagName('select');
+    for (i = 0; i < tags.length; i++) {
+        if (tags[i].type === 'select') {
+            tags[i].selectedIndex = 0;
+        } else {
+            for (j = 0; j < tags[i].options.length; j++) {
+                tags[i].options[j].selected = false;
+            }
+        }
+    }
+
+
+    tags = document.getElementById('uploadPreview');
+    tags.value = '';
+
+    tags = document.getElementById('uploadImage');
+    tags.value = '';
+
+    var image_x = document.getElementById('pic_container');
+    image_x.innerHTML = "<img src='' id='uploadPreview' width='150' height='138' />";
+
+    tags = document.getElementById('app_pre');
+    tags.value = '';
+
+    tags = document.getElementById('app_img');
+    tags.value = '';
+
+    var image_a = document.getElementById('apic_container');
+    image_a.innerHTML = "<img src='' id='app_pre' width='150' height='150' />";
+
+}
+
+function addRow(tableID) {
+    if(document.getElementById('mode').value==='Update')
+    {    
+    var table = document.getElementById(tableID);
+    var rowCount = table.rows.length;
+    var counts = rowCount-2;
+    var count = rowCount-3;
+    } else{  
+    var table = document.getElementById(tableID);
+    var rowCount = table.rows.length;
+    var counts = rowCount - 2;
+    var count = rowCount - 3;
+    }
+     
+    for(var i=0;i<=count;i++){        
+//        // if(document.getElementById('number['+count+']').value==''){alert('family Details Serial No Is Required');(document.getElementById('number['+count+']')).focus(); return false;}
+//         if(document.getElementById('fm_name['+count+']').value==''){alert('family Details Name Is Required');(document.getElementById('fm_name['+count+']')).focus();return false;}
+//         if(document.getElementById('fm_relation1['+count+']').value==''){alert('family Details Relation Is Required');(document.getElementById('fm_relation1['+count+']')).focus();return false;}
+//         if(document.getElementById('fm_age['+count+']').value==''){alert('family Details Age Is Required');(document.getElementById('fm_age['+count+']')).focus();return false;}
+//        else{      
+    var row = table.insertRow(rowCount);
+    row.setAttribute("onmousemove","getRowIndex(this)");
+    row.setAttribute('id','rowId['+counts+']');
+       
+    var cell1 = row.insertCell(0);
+    var element1 = document.createElement("input");
+    element1.type = "checkbox";
+    cell1.appendChild(element1);
+    
+    var cell2 = row.insertCell(1);
+    var element1 = document.createElement("input");
+    element1.type = "text";
+    element1.setAttribute('size','1');
+    element1.value = (rowCount-2);
+    element1.readonly = "true";
+    element1.name = "sl_no";
+    element1.id = "number["+counts+"]";
+    cell2.appendChild(element1);
+
+    var cell3 = row.insertCell(2);
+    var element2 = document.createElement("input");
+    element2.type = "text";
+    element2.setAttribute('size','10');
+    element2.name = "fm_name";
+    element2.id = "fm_name["+counts+"]";
+    cell3.appendChild(element2);
+
+    var cell4 = row.insertCell(3);
+    var element3 = document.createElement("select");
+    element3.innerHTML = document.getElementById("fm_relation1[0]").innerHTML;
+    element3.type = "select";
+    element3.setAttribute('onblur','fillvalsforfmdetailsrelation(this.value)');
+    element3.name = "fm_relation";
+    element3.id = "fm_relation1["+counts+"]";    
+    cell4.appendChild(element3);
+
+    var cell5 = row.insertCell(4);
+    var element4 = document.createElement("input");
+    element4.type = "text";
+    element4.setAttribute('size','3');
+    element4.setAttribute('onblur','fillvalsforfmdetailsage(this.value)');
+    element4.name = "fm_age";
+    element4.id = "fm_age["+counts+"]";    
+    cell5.appendChild(element4);
+    
+    var cell6 = row.insertCell(5);
+    var element5 = document.createElement("input");
+    element5.setAttribute('onclick','addRowOnClick()');
+    element5.type = "checkbox";
+    element5.name = "fm_type1";
+    element5.id = "fm_type1["+counts+"]";
+    element5.value = "F";
+    cell6.appendChild(element5);
+    
+    var cell7 = row.insertCell(6);
+    var element6 = document.createElement("input");
+    element6.setAttribute('onclick','addRowOnClick()');
+    element6.type = "hidden";
+    element6.name = "fm_type";
+    element6.id = "fm_type2["+counts+"]";
+    element6.value = "F";
+    cell7.appendChild(element6);
+ 
+    return true;
+  // }
+  }
+
+}
+
+function addRows(tableID) {
+    if (document.getElementById('mode').value === 'Update')
+    {
+        var table = document.getElementById(tableID);
+        var rowCount = table.rows.length;
+        var counts = rowCount - 1;
+        var count = rowCount;
+    } else {
+        var table = document.getElementById(tableID);
+        var rowCount = table.rows.length;
+        var counts = rowCount - 1;
+        var count = rowCount - 2;
+    }
+    for (var i = 0; i <= count; i++) {
+        //if(document.getElementById('nominee_name['+count+']').value==''){alert('Nominee Name Is Required');(document.getElementById('nominee_name['+count+']')).focus(); return false;}
+        //if(document.getElementById('occupation['+count+']').value==''){alert('Occupation Is Required');(document.getElementById('occupation['+count+']')).focus(); return false;}  
+        //if(document.getElementById('father_nominee['+count+']').value==''){alert('Relation Is Required');(document.getElementById('father_nominee['+count+']')).focus(); return false;}
+        //if(document.getElementById('nominee_age['+count+']').value==''){alert('Nominee Age Is Required');(document.getElementById('nominee_age['+count+']')).focus(); return false;}
+        //if(document.getElementById('percentage['+count+']').value==''){alert('Percentage Is Required');(document.getElementById('percentage['+count+']')).focus(); return false;}
+        // else{ harish
+        var row = table.insertRow(rowCount);
+
+        var cell1 = row.insertCell(0);
+        var element1 = document.createElement("input");
+        element1.type = "checkbox";
+        cell1.appendChild(element1);
+
+        var cell2 = row.insertCell(1);
+        var element1 = document.createElement("input");
+        element1.type = "text";
+        element1.setAttribute('size', '1');
+        element1.value = (rowCount - 1);
+        element1.readonly = "true";
+        element1.name = "sl_no";
+        element1.id = "number[" + counts + "]";
+        cell2.appendChild(element1);
+
+        var cell3 = row.insertCell(2);
+        var element2 = document.createElement("input");
+        element2.type = "text";
+        element2.setAttribute('size', '12');
+        element2.name = "fm_uid";
+        element2.id = "fm_uid[" + counts + "]";
+        element2.setAttribute('onchange', 'getUidFam(this.value)');
+        cell3.appendChild(element2);
+
+
+        var cell4 = row.insertCell(3);
+        var element3 = document.createElement("input");
+        element3.type = "text";
+        element3.setAttribute('size', '10');
+        element3.name = "fm_name";
+        element3.id = "fm_name[" + counts + "]";
+        cell4.appendChild(element3);
+
+        var cell5 = row.insertCell(4);
+        var element4 = document.createElement("select");
+        element4.innerHTML = document.getElementById("fm_relation1[0]").innerHTML;
+        element4.type = "select";
+        element4.setAttribute('onblur', 'fillvalsforfmdetailsrelation(this.value)');
+        element4.name = "fm_relation";
+        element4.id = "fm_relation1[" + counts + "]";
+        cell5.appendChild(element4);
+
+        var cell6 = row.insertCell(5);
+        var element5 = document.createElement("input");
+        element5.type = "text";
+        element5.setAttribute('size', '3');
+        element5.setAttribute('onblur', 'fillvalsforfmdetailsage(this.value)');
+        element5.name = "fm_age";
+        element5.id = "fm_age[" + counts + "]";
+        cell6.appendChild(element5);
+
+        var cell7 = row.insertCell(6);
+        var element6 = document.createElement("input");
+        element6.setAttribute('onclick', 'addRowOnClick()');
+        element6.type = "checkbox";
+        element6.name = "fm_type1";
+        element6.id = "fm_type1[" + counts + "]";
+        element6.value = "F";
+        cell7.appendChild(element6);
+
+        var cell8 = row.insertCell(7);
+        var element7 = document.createElement("input");
+        element7.setAttribute('onclick', 'addRowOnClick()');
+        element7.type = "hidden";
+        element7.name = "fm_type";
+        element7.id = "fm_type2[" + counts + "]";
+        element7.value = "F";
+        cell8.appendChild(element7);
+
+        return true;
+    }
+    // }
+}
+
+function deleteRow(tableID) {
+    try {
+        var table = document.getElementById(tableID);
+        var rowCount = table.rows.length;
+
+        for (var i = 0; i < rowCount; i++) {
+            var row = table.rows[i];
+            var chkbox = row.cells[0].childNodes[0];
+            if (null != chkbox && true === chkbox.checked) {
+                table.deleteRow(i);
+                rowCount--;
+                i--;
+            }
+
+
+        }
+    } catch (e) {
+        alert(e);
+    }
+}
+//-------------email Validations--------------------
+function validateEmail(email, obj)
+{
+    var filter = /^([\w-\.]+@(gmail.com|yahoo.com|hotmail.com|yahoo.co.in|ap.nic.in|nic.in|gov.in|ap.gov.in))?$/
+    if (!filter.test(email)) {
+        alert('please provide valid Email-Id');
+        email.value = "";
+        obj.focus();
+    }
+}
+//-------------------photo validations------------------
+function photoValidations(values, obj) {
+    var fileName = values;
+//    var filesize = obj.files[0].size;
+//    if (filesize > 10000) {
+//        alert("File Size Should Be 10KB");
+//        obj.value = '';
+//        obj.focus();
+//    }
+    var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+    if (!(ext === "gif" || ext === "GIF" || ext === "JPEG" || ext === "jpeg" || ext === "jpg" || ext === "JPG" || ext === "png" || ext === "PNG"))
+    {
+        alert("Upload gif,jpg,png,jpeg images only");
+        obj.value = '';
+        obj.focus();
+    }
+}
+
+//----------------------------photo Preview---------------------
+function PreviewImage(file, img) {
+    var oFReader = new FileReader();
+    oFReader.readAsDataURL(file.files[0]);
+
+    oFReader.onload = function (oFREvent) {
+        document.getElementById(img).src = oFREvent.target.result;
+
+    };
+}
+;
+//---------------toUppercase-------------------------
+function uppperCase(orginalValue, obj) {
+    obj.value = orginalValue.toUpperCase();
+}
+
+//---------------------Age on Date Seleted-----------------
+function getAge(DOB, age) {
+
+    var yy = DOB.substring(6, 10);
+    var mm = DOB.substring(3, 5);
+    var dd = DOB.substring(0, 2);
+    var today = new Date();
+    var birthDate = new Date(yy, mm, dd);
+    var Actage = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate()) || age === -1) {
+        document.getElementById(age).value = '';
+    }
+    if (Actage > 110) {
+        document.getElementById(age).value = '';
+    } else {
+        document.getElementById(age).value = Actage;
+    }
+}
+//----------------------Hide Selected Options------------------------------------------------
+function hideSeletedOption(val) {
+    var opts = document.getElementsByClassName('opts');
+    for (var k = 0; k < opts.length; k++) {
+        if (opts[k].value === val) {
+            opts[k].style.display = "none";
+        }
+    }
+}
+
+//--------------------------------------------------------------------------------------------
+function hideSeletedOption(obj) {
+    var opt1 = obj;
+    var opts = document.getElementsByClassName('opts');
+    for (var k = 0; k < opts.length; k++) {
+        if (opts[k].value === opt1) {
+            opts[k].style.display = "none";
+        }
+    }
+}
+//-----------------------------Alert Duplicates-----------------------------------------
+var alertDupts;
+function alertDupts(OtherId, obj, message) {
+    alertDupts = setInterval(function () {
+        if (document.getElementById(OtherId).value > 0) {
+            alert(message);
+            message = '';
+            document.getElementById(OtherId).options.length = null;
+            obj.focus();
+        }
+    }, 100);
+}
+//--------------------------photo resize--------------------------------------------------
+
+var settings = {
+    maxwidth: 250,
+    maxheight: 150
+};
+
+function changeInput(input) {
+    //alert("@Called changeInput() function------------------");
+    var obj = input.files[0].size;
+
+    if (obj > 10000) {
+        if (confirm("Photo size is More than 10kb is Automatically resized and its quality is decreased, click ok if yes")) {
+            function createReader(file) {
+                var reader = new FileReader();
+
+                reader.onload = function (evt) {
+                    var image = new Image();
+                    image.onload = function (evt) {
+                        var canvas = document.createElement('canvas'),
+                                ctx = canvas.getContext('2d'),
+                                ratio = Math.min(settings.maxwidth / (2 * this.width), settings.maxheight / (2 * this.height), 1),
+                                width = Math.round(this.width * ratio),
+                                height = Math.round(this.height * ratio),
+                                img = null;
+                        canvas.width = width;
+                        canvas.height = height;
+
+                        ctx.drawImage(image, 0, 0, width, height);
+                       // var rszFile = canvas.mozGetAsFile(ctx);
+                      //  alert(rszFile);
+                        document.getElementById("hiddenval").value = canvas.toDataURL("png");
+                        document.getElementById("resizedImg").src = canvas.toDataURL("png");
+                    };
+                    image.src = evt.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+            for (var i = 0, length = input.files.length; i < length; i++) {
+                createReader(input.files[i]);
+            }
+        } else {
+            document.getElementById("uploadPreview").src = '';
+            input.value = '';
+            input.focus();
+            return false;
+        }
+    }
+}
+
+function translate(from_id, to_id, lang) {
+    //transliterateTextarea                
+    val = document.getElementById(from_id).value;
+    google.language.transliterate([val], "en", lang, function (result) {
+        if (!result.error) {
+            var container = document.getElementById(to_id);
+            if (result.transliterations && result.transliterations.length > 0 &&
+                    result.transliterations[0].transliteratedWords.length > 0) {
+                container.value = result.transliterations[0].transliteratedWords[0];
+            }
+        }
+    });
+}
+
+
+
+
+//--------------------------------drill down--------------------------------------------
+function Req_Click(sn)
+{
+    var cobj1 = document.all("req_det[]");
+    var cobj2 = document.all("expnd_colps[]");
+    if (document.all("expnd_colps[]").length)
+        var nrow = document.all("expnd_colps[]").length;
+    else
+        nrow = 1;
+
+    if (sn === 'A')
+    {
+        var s1 = 0;
+        if (nrow > 1)
+            var s2 = nrow - 1;
+        else
+            s2 = 0;
+    } else
+    {
+        var s1 = sn - 1;
+        var s2 = s1;
+    }
+
+    for (var i = s1; i <= s2; i++)
+    {
+        if (s1 === s2 && nrow === 1)
+            var obj1 = cobj1;
+        else
+            var obj1 = cobj1[i];
+        if (s1 === s2 && nrow === 1)
+            var obj2 = cobj2;
+        else
+            var obj2 = cobj2[i];
+
+        if (obj1.style.display === 'none')
+        {
+            obj1.style.display = '';
+            obj2.innerHTML = '';
+            obj2.innerHTML = '-';
+        } else
+        {
+            if (sn === 'A' && document.all("expndall").innerHTML === 'Expand All')
+            {
+                obj1.style.display = '';
+                obj2.innerHTML = '';
+                obj2.innerHTML = '-';
+            } else
+            {
+                obj1.style.display = 'none';
+                obj2.innerHTML = '';
+                obj2.innerHTML = '+';
+            }
+        }
+    }
+    var allexp = '';
+    if (cobj2.length > 1)
+        var s3 = cobj2.length - 1;
+    else
+        var s3 = 0;
+    for (var i = 0; i <= s3; i++)
+    {
+        if (s1 === s2 && nrow === 1)
+            var obj1 = cobj1;
+        else
+            var obj1 = cobj1[i];
+        if (obj1.style.display === '')
+            allexp = 'T';
+        else
+        {
+            allexp = 'F';
+            break;
+        }
+    }
+    if (allexp === 'T')
+        document.all("expndall").innerHTML = 'Collapse All';
+    else
+        document.all("expndall").innerHTML = 'Expand All';
+}
+//-------------------------------------------------------------------------------------------------------           
+function fileValidations(values, obj) {
+    var fileName = values;
+//    var filesize = obj.files[0].size;
+//    if (filesize > 600000) {
+//        alert("Uploading File Size Should be 100KB or Lesser than 100KB.");
+//        obj.value = '';
+//        obj.focus();
+//        return false;
+//    }
+    var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+    if ( !(ext === "pdf" || ext === "PDF") )  //1803-- || ext === "JPEG" || ext === "jpeg" || ext === "jpg" || ext === "JPG" )|| ext === "png" || ext === "PNG" ) 
+    {
+        alert("You have Selected  Image file - Plese upload PDF file - Uploading Application should be in pdf format only.");
+        obj.value = '';
+        obj.focus();
+        return false;
+    }
+        if(ext === "pdf" || ext === "PDF") {
+            //alert("PDF File Selected............");
+            var filesize = obj.files[0].size;
+            if (filesize > 256000) {    //////// increased allowed file size to 250kb ////
+                alert("Uploading File Size Should be 250KB or Lesser than 250KB.");
+                obj.value = '';
+                obj.focus();
+                return false;
+            }
+        }
+}
+
+function PreviewApp(file) {
+    //alert("@Called and executing PreviewApp() from validations.js------------------2");
+    var oFReader = new FileReader();
+    oFReader.readAsDataURL(file.files[0]);
+
+    oFReader.onload = function (oFREvent) {
+        document.getElementById("app_img").src = oFREvent.target.result;
+    };
+
+    //alert("@Calling changeAppIn() from validations.js------------------3");
+    changeAppIn(file);
+}
+// 250 / 150
+var settings = {
+    maxwidth: 350,
+    maxheight: 250
+};
+
+function changeAppIn(input) {
+    //alert("@Called and executing changeAppIn() function------------------4---" );
+    var obj = input.files[0].size;
+
+    if (obj > 100000) {
+        if (confirm("Photo size is More than 100kb is Automatically resized and its quality is decreased, click ok if yes")) {
+            function createReader(file) {
+                var reader = new FileReader();
+
+                reader.onload = function (evt) {
+                    var image = new Image();
+                    image.onload = function (evt) {
+                        var canvas = document.createElement('canvas'),
+                                ctx = canvas.getContext('2d'),
+                                ratio = Math.min( settings.maxwidth / (2 * this.width), settings.maxheight / (2 * this.height), 1),
+                                width = Math.round(this.width * ratio),
+                                height = Math.round(this.height * ratio),
+                                img = null;
+                        canvas.width = width;
+                        canvas.height = height;
+
+                        ctx.drawImage(image, 0, 0, width, height);
+
+                        document.getElementById("app_hid").value = canvas.toDataURL("png");
+
+                    };
+                    image.src = evt.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+            for (var i = 0, length = input.files.length; i < length; i++) {
+                createReader(input.files[i]);
+            }
+        } else {
+            document.getElementById("app_img").src = '';
+            input.value = '';
+            input.focus();
+            return false;
+        }
+    }
+}
+
+function checkStr(str, ch) {   
+    var mesg ="";
+    switch(ch) {
+        case 1: re = /^[0-9]*$/;
+            mesg = "Please Enter Numeric Digits Only.";
+                break;
+        case 2: re = /^[a-zA-Z. ]*$/;
+            mesg = "Invalid Value Entered - Enter Alphabets and Special Characters dot(.) only allowed.";
+            break;      ////added hyphen on 05112019///
+        case 3: re = /^[0-9a-zA-Z ._;,-]*$/;
+            mesg = "Invalid Value Entered - Enter Alpha Numeric Values and Special Characters hyphen(-) or underscore(_) or dot(.) or comma(,) or semicolon(;) only allowed.";
+            break;            
+        case 4: re = /^[a-zA-Z ]*$/;
+            mesg = "Invalid Value Entered - Enter Alphabets Only - No Special Characters allowed.";
+            break;
+        case 5: re = /^[0-9A-Z]*$/;
+            mesg = "Invalid Value Entered - Enter Alphabets in Capitals and Digits ( 0 - 9 ) Only  and No Special Characters are allowed.";
+            break;
+        case 6: re = /^[A-Z]*$/;
+            mesg = "Invalid Value Entered - Enter Alphabets in Capitals and No Special Characters are allowed.";
+            break;
+        case 7: re = /^[0-9a-zA-Z _-]*$/;
+            mesg = "Invalid Value Entered - Enter Alpha Numeric Values and Special Characters underscore(_) or hipen(-) only allowed.";
+            break;            
+        case 8: re = /^[6-9]{1}\d{9}$/;
+            mesg = "Invalid Value Entered - Enter Valid 10 Digit Mobile Number.";
+            break;
+        case 9: re = /^[0-9a-zA-Z .;,/():_-]*$/;
+            mesg = "Invalid Value Entered - Enter Alpha Numeric Values and Special Characters comma(,) or #, (, ), [, ] are not allowed.";
+            break;
+        default: re = /^[0-9a-zA-Z ]*$/;
+            mesg = "Invalid Value Entered - Enter Alpha Numeric Values and No Special Characters are allowed.";
+            break;
+    }
+    var addr = str.value; //////041019-alert("Value ::" +  addr );
+    ////re = /^[0-9a-zA-Z ._;]*$/;
+    if (addr != '' && !addr.match(re))
+    {
+        alert("Note :"+mesg);
+        str.value = "";
+        str.focus();
+        return false;
+    }
+}
+
+function checkDMYStr( argm ) {
+    var fldVal = argm.value; //////04032020-alert("Value ::" +  fldVal );
+    var regexp = /^(0[1-9]||[12][0-9]||3[01]){2}\-{1}(0[1-9]||1[0-2]){2}\-{1}[2]{1}[0]{1}[0-9]{2}$/ ;      
+    var mesg = "Invalid Date. Date should be in DD-MM-YYYY Format only. Use hyphen(-) only as Seperator"; 
+    if ( fldVal!== '' && !fldVal.match(regexp)) 
+    {
+        alert("Alert: "+mesg);
+        argm.value = "";
+        argm.focus();
+        return false;
+    }
+}
+
+function checkDOBStr( argm ) {
+    var fldVal = argm.value; //////04032020-alert("Value ::" +  fldVal );
+    var regexp = /^(0[1-9]||[12][0-9]||3[01]){2}\-{1}(0[1-9]||1[0-2]){2}\-{1}[0-9]{4}$/  ;
+    var mesg = "Invalid Date. Date should be in DD-MM-YYYY Format only. Use hyphen(-) only as Seperator"; 
+    if ( fldVal!== '' && !fldVal.match(regexp)) 
+    {
+        alert("Alert: "+mesg);
+        argm.value = "";
+        argm.focus();
+        return false;
+    }
+}
+
+function checkFieldStr(str, ch) {   
+    var msg ="";
+    switch(ch) {
+        case 1: re = /^[0-9]*$/;
+            msg = "Please Enter Only Numbers (Numeric Digits) Only.";
+            break;
+        case 2: re = /^[A-Z]{4}0[A-Z0-9]{6}$/;
+            msg = "Invalid IFSC Code - Enter valid 11 Characters IFSC Code. Ex. ANDB0000123";
+            break;
+        case 3: re = /^[0-9a-zA-Z ._;-]*$/;
+            msg = "Invalid Value Entered - Enter Alpha Numeric Values and Special Characters underscore(_) or dot(.) or semicolon(;) only allowed.";
+            break;            
+        case 4: re = /^[a-zA-Z ]*$/;
+            msg = "Invalid Value Entered - Enter Alphabets Only - No Special Characters allowed.";
+            break;
+        case 5: re = /^[0-9A-Z]*$/;
+            msg = "Invalid Value Entered - Enter Alphabets in Capitals and Digits ( 0 - 9 ) Only  and No Special Characters are allowed.";
+            break;
+        case 6: re = /^[A-Z]*$/;
+            msg = "Invalid Value Entered - Enter Alphabets in Capitals and No Special Characters are allowed.";
+            break;
+        case 7: re = /^[0-9a-zA-Z _-]*$/;
+            msg = "Invalid Value Entered - Enter Alpha Numeric Values and Special Characters underscore(_) or hipen(-) only allowed.";
+            break;
+        case 8: re = /^[6-9]{1}\d{9}$/;
+            msg = "Invalid Value Entered - Enter Valid 10 Digit Mobile Number.";
+            break;
+        case 9: re = /^[0-9a-zA-Z .;,)/(:_-]*$/;
+            msg = "Invalid Value Entered - Enter Alpha Numeric Values and Special Characters .,);/(:_- are allowed. Other special Characters were not allowed";
+            break;
+        case 10: re = /^(0[1-9]||[12][0-9]||3[01]){2}\-{1}(0[1-9]||1[0-2]){2}\-{1}[2]{1}[0]{1}[0-9]{2}$/;
+            msg = "Invalid Date. Date should be in DD-MM-YYYY Format only. Use hyphen(-) only as Seperator"; 
+            break;
+        default: re = /^[0-9a-zA-Z ]*$/;
+            msg = "Invalid Value Entered - Enter Alpha Numeric Values and No Special Characters are allowed.";
+            break;
+    }
+    var strVal = str.value;
+    if (strVal != '' && !strVal.match(re))
+    {
+        alert("Check: "+msg);
+        str.value = "";
+        str.focus();
+        return false;
+    }
+}
+//--------------------------------------eng to tel translator--------------------------------------------  
+
+console.log("translating text....");
+
+google.load("language", "1");
+google.load("elements", "1", {
+    packages: "transliteration"
+});
+function onLoad() {
+    var options = {
+        sourceLanguage:
+                google.elements.transliteration.LanguageCode.ENGLISH,
+        destinationLanguage:
+                [google.elements.transliteration.LanguageCode.TELUGU],
+        shortcutKey: 'ctrl+g',
+        transliterationEnabled: true
+    };
+    var control =
+            new google.elements.transliteration.TransliterationControl(options);
+}
+google.setOnLoadCallback(onLoad);
